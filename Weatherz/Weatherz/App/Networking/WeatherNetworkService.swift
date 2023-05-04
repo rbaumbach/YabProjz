@@ -24,7 +24,7 @@ final class WeatherNetworkService {
     // MARK: - Private methods
     
     private func apiKey() -> String {
-        return Constants.WeatherStackAPI.BaseURLString
+        return Constants.WeatherStackAPI.AccessKey
     }
     
     private func endpoint() -> String {
