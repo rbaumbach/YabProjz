@@ -1,5 +1,8 @@
 import Foundation
 
 struct Constants {
-    let WeatherAPIKey = "ENTER_YOUR_API_KEY_HERE"
+    struct WeatherStackAPI {
+        let Key = "ENTER_YOUR_API_KEY_HERE"
+        let BaseURLString = "http://api.weatherstack.com/"
+    }
 }
