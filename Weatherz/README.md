@@ -22,21 +22,21 @@ There have been various times during interviews where you will be either creatin
 - [ ] Use a child view controller
 - [ ] Use MVVM
 - [ ] Use a UITableView
-- [ ] Use delegate pattern
+- [x] Use delegate pattern
 - [x] Create delegate pattern for custom structure
-- [ ] Create an async method/function/manager
+- [x] Create an async method/function/manager
 - [ ] Use an activity monitor with async functionality
 - [x] Create pattern for handling constants
 - [x] Deal with a http (not https) using domain exception with `NSAppTransportSecurity`
 - [ ] API
-  - [ ] Use URLSession
+  - [x] Use URLSession
   - [ ] Create response models
   - [ ] Manually serialize a request
   - [ ] Manually deserialize a response
   - [ ] Use Codable with mismatching response data to model data
   - [ ] Create a request with some headers
-  - [ ] Create error handling
-  - [ ] Create network service
+  - [x] Create error handling
+  - [x] Create network service
 - [ ] Dependency Injection
   - [ ] Use "constructor" injection
   - [ ] Use property injection
@@ -47,10 +47,11 @@ There have been various times during interviews where you will be either creatin
   - [ ] Persist custom structure using Data type and Codable
   - [ ] Persist data in Keychain
 - [ ] Higher Order Functions
-  - [ ] Use map
+  - [x] Use map
   - [ ] Use reduce
   - [ ] Use forEach
   - [ ] Use filter
+  - [ ] Use compactMap
 - [ ] Unit Testing
   - [ ] Test a model
   - [ ] Test a view controller
