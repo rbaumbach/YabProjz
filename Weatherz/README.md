@@ -27,6 +27,7 @@ There have been various times during interviews where you will be either creatin
 - [ ] Create an async method/function/manager
 - [ ] Use an activity monitor with async functionality
 - [x] Create pattern for handling constants
+- [x] Deal with a http (not https) using domain exception with `NSAppTransportSecurity`
 - [ ] API
   - [ ] Use URLSession
   - [ ] Create response models

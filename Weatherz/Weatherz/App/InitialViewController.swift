@@ -1,19 +1,10 @@
 import UIKit
 
-class InitialViewController: UIViewController, WeatherDetailViewControllerDelegate {
+final class InitialViewController: UIViewController, WeatherDetailViewControllerDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var cityTextField: UITextField!
-    
-    // MARK: - Properties
-    
-    // MARK: - View lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
+        
     // MARK: - <WeatherDetailViewControllerDelegate>
     
     func didTapClose() {
@@ -22,8 +13,9 @@ class InitialViewController: UIViewController, WeatherDetailViewControllerDelega
     
     // MARK: - IBActions
     
-    @IBAction func didTapCheckWeatherModalButton(_ sender: UIButton) {
+    @IBAction func didTapCheckWeatherModalButton(_ sender: UIButton) {        
         let weatherDetailViewController = buildWeatherDetailsViewController()
+        weatherDetailViewController.city = cityTextField.text
         weatherDetailViewController.delegate = self
                 
         present(weatherDetailViewController, animated: true)
@@ -38,7 +30,7 @@ class InitialViewController: UIViewController, WeatherDetailViewControllerDelega
     
     // MARK: - Private methods
     
-    func buildWeatherDetailsViewController() -> WeatherDetailViewController {
+    private func buildWeatherDetailsViewController() -> WeatherDetailViewController {
         let storyboard = UIStoryboard(name: "WeatherDetailViewController", bundle: nil)
         
         return storyboard.instantiateInitialViewController() as! WeatherDetailViewController

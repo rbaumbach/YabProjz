@@ -4,10 +4,18 @@ protocol WeatherDetailViewControllerDelegate: AnyObject {
     func didTapClose()
 }
 
-class WeatherDetailViewController: UIViewController {
+final class WeatherDetailViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var closeButton: UIButton!
+    
+    // MARK: - Readonly properties
+    
+    var weatherNetworkService = WeatherNetworkService()
+    
+    // MARK: - Public methods
+    
+    var city: String?
     
     // MARK: - Properties
     
@@ -18,6 +26,14 @@ class WeatherDetailViewController: UIViewController {
     override func viewDidLoad() {
         if navigationController == nil {
             closeButton.isHidden = false
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        weatherNetworkService.getCurrentWeather(city: city!) { result in
+            print(result)
         }
     }
     
