@@ -8,6 +8,8 @@ final class WeatherDetailViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var degreesLabel: UILabel!
     
     // MARK: - Readonly properties
     

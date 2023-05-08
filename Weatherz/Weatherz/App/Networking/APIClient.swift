@@ -15,61 +15,6 @@ final class APIClient {
         self.baseURL = baseURL
     }
     
-    func request(urlRequest: URLRequest,
-                 completionHandler: @escaping (Result<[String: Any], APIClientError>) -> Void) {
-        let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            guard error == nil else {
-                let result: Result<[String: Any], APIClientError> = Result.failure(.requestError)
-                
-                completionHandler(result)
-                
-                return
-            }
-            
-            guard let response = (response as? HTTPURLResponse) else {
-                let result: Result<[String: Any], APIClientError> = Result.failure(.malformedResponseError)
-                
-                completionHandler(result)
-                
-                return
-            }
-            
-            guard (200...299).contains(response.statusCode) else {
-                let result: Result<[String: Any], APIClientError> = Result.failure(.invalidStatusCodeError)
-                
-                completionHandler(result)
-                
-                return
-            }
-            
-            guard let data = data else {
-                let result: Result<[String: Any], APIClientError> = Result.failure(.dataError)
-                
-                completionHandler(result)
-                
-                return
-            }
-            
-            guard let dictResponse = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-                let result: Result<[String: Any], APIClientError> = Result.failure(.responseJSONError)
-                
-                completionHandler(result)
-                
-                return
-            }
-            
-            print(dictResponse)
-            
-            let result: Result<[String : Any], APIClientError> = Result.success(dictResponse)
-            
-            DispatchQueue.main.async {
-                completionHandler(result)
-            }
-        }
-        
-        dataTask.resume()
-    }
-    
     func request(endpoint: String,
                  parameters: [String: String],
                  completionHandler: @escaping (Result<[String: Any], Error>) -> Void) {

@@ -14,7 +14,7 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
     // MARK: - IBActions
     
     @IBAction func didTapCheckWeatherModalButton(_ sender: UIButton) {        
-        let weatherDetailViewController = buildWeatherDetailsViewController()
+        let weatherDetailViewController = buildViewController(name: "WeatherDetailViewController") as! WeatherDetailViewController
         weatherDetailViewController.city = cityTextField.text
         weatherDetailViewController.delegate = self
                 
@@ -22,17 +22,23 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
     }
     
     @IBAction func didTapCheckWeatherNavButton(_ sender: UIButton) {
-        let weatherDetailViewController = buildWeatherDetailsViewController()
+        let weatherDetailViewController = buildViewController(name: "WeatherDetailViewController") as! WeatherDetailViewController
         weatherDetailViewController.delegate = self
                 
         navigationController?.pushViewController(weatherDetailViewController, animated: true)
     }
     
+    @IBAction func didTapPreviousSearchesButton(_ sender: UIButton) {
+        let previousSearchesViewController = buildViewController(name: "PreviousSearchesViewController") as! PreviousSearchesViewController
+        
+        navigationController?.pushViewController(previousSearchesViewController, animated: true)
+    }
+    
     // MARK: - Private methods
     
-    private func buildWeatherDetailsViewController() -> WeatherDetailViewController {
-        let storyboard = UIStoryboard(name: "WeatherDetailViewController", bundle: nil)
+    private func buildViewController(name: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: name, bundle: nil)
         
-        return storyboard.instantiateInitialViewController() as! WeatherDetailViewController
+        return storyboard.instantiateInitialViewController()!
     }
 }
