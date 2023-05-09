@@ -1,11 +1,11 @@
 import UIKit
 
-final class InitialViewController: UIViewController, WeatherDetailViewControllerDelegate {
+final class InitialViewController: UIViewController, WeatherDetailViewControllerDelegate, SettingsViewControllerDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var cityTextField: UITextField!
         
-    // MARK: - <WeatherDetailViewControllerDelegate>
+    // MARK: - <WeatherDetailViewControllerDelegate, SettingsViewController>
     
     func didTapClose() {
         dismiss(animated: true)
@@ -32,6 +32,13 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
         let previousSearchesViewController = buildViewController(name: "PreviousSearchesViewController") as! PreviousSearchesViewController
         
         navigationController?.pushViewController(previousSearchesViewController, animated: true)
+    }
+    
+    @IBAction func didTapSettingsBarButton(_ sender: UIBarButtonItem) {
+        let settingsViewController = buildViewController(name: "SettingsViewController") as! SettingsViewController
+        settingsViewController.delegate = self
+        
+        present(settingsViewController, animated: true)
     }
     
     // MARK: - Private methods
