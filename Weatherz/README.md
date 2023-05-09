@@ -21,7 +21,7 @@ There have been various times during interviews where you will be either creatin
 - [x] Use MVC
 - [ ] Use a child view controller
 - [ ] Use MVVM
-- [ ] Use a UITableView
+- [x] Use a UITableView
 - [x] Use delegate pattern
 - [x] Create delegate pattern for custom structure
 - [x] Create an async method/function/manager
