@@ -10,4 +10,8 @@ struct Constants {
         static let ShouldShowWeatherInCelsiusKey = "ShouldShowWeatherInCelsiusKey"
         static let HasRanAppOnce = "HasRanAppOnce"
     }
+    
+    struct FileManagerFileNames {
+        static let PersistedLocationsFileName = "persistedLocations.json"
+    }
 }

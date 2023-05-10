@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ibr-ih-c8k">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Previous Weather Detail View Controller-->
+        <scene sceneID="LHE-ti-fmT">
+            <objects>
+                <viewController id="ibr-ih-c8k" customClass="PreviousWeatherDetailViewController" customModule="Weatherz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3RU-cx-yZH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSZ-hZ-oKz" userLabel="cityLabel">
+                                <rect key="frame" x="182.66666666666666" y="74" width="28" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rw-d3-khZ" userLabel="weatherLabel">
+                                <rect key="frame" x="141" y="120" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGy-pw-xoV" userLabel="degreesLabel">
+                                <rect key="frame" x="188" y="166" width="17" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2S-SJ-fz9" userLabel="timestampLabel">
+                                <rect key="frame" x="154" y="797" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pG3-3u-bne"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XSZ-hZ-oKz" firstAttribute="centerX" secondItem="pG3-3u-bne" secondAttribute="centerX" id="GdI-PY-07n"/>
+                            <constraint firstItem="zGy-pw-xoV" firstAttribute="top" secondItem="9Rw-d3-khZ" secondAttribute="bottom" constant="25" id="L7v-hd-mLP"/>
+                            <constraint firstItem="9Rw-d3-khZ" firstAttribute="top" secondItem="XSZ-hZ-oKz" secondAttribute="bottom" constant="25" id="W95-U8-lzS"/>
+                            <constraint firstItem="XSZ-hZ-oKz" firstAttribute="top" secondItem="pG3-3u-bne" secondAttribute="top" constant="15" id="WNp-mj-LVB"/>
+                            <constraint firstItem="pG3-3u-bne" firstAttribute="bottom" secondItem="V2S-SJ-fz9" secondAttribute="bottom" id="ZaK-Xf-Q6W"/>
+                            <constraint firstItem="zGy-pw-xoV" firstAttribute="centerX" secondItem="9Rw-d3-khZ" secondAttribute="centerX" id="dS1-of-hWf"/>
+                            <constraint firstItem="9Rw-d3-khZ" firstAttribute="centerX" secondItem="XSZ-hZ-oKz" secondAttribute="centerX" id="zOz-Tv-Lwy"/>
+                            <constraint firstItem="V2S-SJ-fz9" firstAttribute="centerX" secondItem="pG3-3u-bne" secondAttribute="centerX" id="zjX-5c-aQe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="XSZ-hZ-oKz" id="plJ-iF-Lwn"/>
+                        <outlet property="degreesLabel" destination="zGy-pw-xoV" id="ceU-eS-3Fr"/>
+                        <outlet property="timestampLabel" destination="V2S-SJ-fz9" id="s5d-OJ-o8T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Izt-Gm-tLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-91" y="-54"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

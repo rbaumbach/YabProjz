@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             userDefaults.set(true, forKey: Constants.UserDefaultKeys.HasRanAppOnce)
         }
         
+        print("DocumentsDirectory: \(FileManager.default.documentsDirectory())")
+        
         return true
     }
 

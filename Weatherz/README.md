@@ -45,7 +45,7 @@ There have been various times during interviews where you will be either creatin
 - [ ] Persistence
   - [x] Use UserDefaults
   - [ ] Persist custom structure in UserDefaults
-  - [ ] Persist custom structure using Data type and Codable
+  - [x] Persist custom structure using Data type and Codable
   - [ ] Persist data in Keychain
 - [ ] Higher Order Functions
   - [x] Use map
@@ -53,6 +53,7 @@ There have been various times during interviews where you will be either creatin
   - [ ] Use forEach
   - [ ] Use filter
   - [ ] Use compactMap
+  - [ ] Use sort or sorted
 - [ ] Unit Testing
   - [ ] Test a model
   - [ ] Test a view controller

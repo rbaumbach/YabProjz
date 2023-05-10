@@ -19,6 +19,8 @@ final class WeatherDetailViewController: UIViewController {
     
     var temperatureConverter = TemperatureConverter()
     
+    var fileManager = FileManager.default
+    
     var city: String?
     
     // MARK: - Properties
@@ -55,6 +57,8 @@ final class WeatherDetailViewController: UIViewController {
         switch result {
         case .success(let location):
             updateDegreesLabel(temperature: location.temperature)
+            
+            persistWeather(location: location)
         case .failure(let error):
             errorLabel.text = error.localizedDescription
         }
@@ -70,5 +74,17 @@ final class WeatherDetailViewController: UIViewController {
         }
         
         degreesLabel.isHidden = false
+    }
+    
+    private func persistWeather(location: Location) {
+        let fileName = Constants.FileManagerFileNames.PersistedLocationsFileName
+        
+        var previousLocations: [Location] = fileManager.readFromDocumentsDir(fileName: fileName) ?? []
+                
+        previousLocations.append(location)
+        
+        print(previousLocations)
+        
+        fileManager.saveToDocumentsDir(data: previousLocations, fileName: fileName)
     }
 }
