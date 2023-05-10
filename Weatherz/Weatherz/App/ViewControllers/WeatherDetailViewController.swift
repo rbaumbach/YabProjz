@@ -8,9 +8,11 @@ final class WeatherDetailViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var degreesLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
-            
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
     // MARK: - Public methods
     
     var weatherNetworkService = WeatherNetworkService()
@@ -56,7 +58,7 @@ final class WeatherDetailViewController: UIViewController {
     private func weatherNetworkServiceHander(result: Result<Location, Error>) {
         switch result {
         case .success(let location):
-            updateDegreesLabel(temperature: location.temperature)
+            updateView(temperature: location.temperature)
             
             persistWeather(location: location)
         case .failure(let error):
@@ -64,7 +66,7 @@ final class WeatherDetailViewController: UIViewController {
         }
     }
     
-    private func updateDegreesLabel(temperature: Double) {
+    private func updateView(temperature: Double) {
         if userDefaults.bool(forKey: Constants.UserDefaultKeys.ShouldShowWeatherInCelsiusKey) {
             degreesLabel.text = String(temperature)
         } else {
@@ -73,7 +75,11 @@ final class WeatherDetailViewController: UIViewController {
             degreesLabel.text = String(tempInFahrenheit)
         }
         
+        cityLabel.isHidden = false
+        weatherLabel.isHidden = false
         degreesLabel.isHidden = false
+        
+        activityIndicatorView.stopAnimating()
     }
     
     private func persistWeather(location: Location) {
@@ -82,9 +88,7 @@ final class WeatherDetailViewController: UIViewController {
         var previousLocations: [Location] = fileManager.readFromDocumentsDir(fileName: fileName) ?? []
                 
         previousLocations.append(location)
-        
-        print(previousLocations)
-        
+                
         fileManager.saveToDocumentsDir(data: previousLocations, fileName: fileName)
     }
 }

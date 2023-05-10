@@ -16,13 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-2e-MbE" userLabel="cityLabel">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-2e-MbE" userLabel="cityLabel">
                                 <rect key="frame" x="182.66666666666666" y="74" width="28" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDb-YM-9Rs" userLabel="weatherLabel">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDb-YM-9Rs" userLabel="weatherLabel">
                                 <rect key="frame" x="141" y="120" width="111" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -40,24 +40,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="L7k-Hr-a5p" userLabel="activtityIndicatorView">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rDb-YM-9Rs" firstAttribute="centerX" secondItem="qOy-2e-MbE" secondAttribute="centerX" id="1J0-ea-ed2"/>
+                            <constraint firstItem="L7k-Hr-a5p" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="3yl-9p-jAs"/>
                             <constraint firstItem="rDb-YM-9Rs" firstAttribute="top" secondItem="qOy-2e-MbE" secondAttribute="bottom" constant="25" id="BjR-Xv-bce"/>
                             <constraint firstItem="qOy-2e-MbE" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="QC0-Ws-6tN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VFH-HK-I8T" secondAttribute="bottom" id="Qru-Fe-G6H"/>
                             <constraint firstItem="qOy-2e-MbE" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="Wkg-rm-f1Z"/>
                             <constraint firstItem="VFH-HK-I8T" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="csC-rK-P8M"/>
                             <constraint firstItem="szd-gf-ZwZ" firstAttribute="top" secondItem="rDb-YM-9Rs" secondAttribute="bottom" constant="25" id="hSA-KB-O6X"/>
+                            <constraint firstItem="L7k-Hr-a5p" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="kiI-to-K5x"/>
                             <constraint firstItem="szd-gf-ZwZ" firstAttribute="centerX" secondItem="rDb-YM-9Rs" secondAttribute="centerX" id="kpD-kH-ChO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="L7k-Hr-a5p" id="wnw-fU-UbS"/>
                         <outlet property="cityLabel" destination="qOy-2e-MbE" id="Dog-S3-Z3v"/>
                         <outlet property="degreesLabel" destination="szd-gf-ZwZ" id="bLh-fW-SaS"/>
                         <outlet property="errorLabel" destination="VFH-HK-I8T" id="HZx-C1-7sg"/>
+                        <outlet property="weatherLabel" destination="rDb-YM-9Rs" id="Vdp-BU-Npb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -10,9 +10,13 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
     
     var dataSource: [Location]!
     
+    var userDefaults = UserDefaults.standard
+    
     var fileManager = FileManager.default
     
     var viewControllerBuilder = ViewControllerBuilder()
+    
+    var temperatureConverter = TemperatureConverter()
     
     // MARK: - View lifecycle
     
@@ -35,7 +39,15 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
         
         let location = dataSource[indexPath.row]
         
-        let displayText = "City: \(String(location.city)) - Weather: \(String(location.temperature)) @ \(String(location.timestamp.description))"
+        var temperature = String(location.temperature)
+        
+        if !userDefaults.bool(forKey: Constants.UserDefaultKeys.ShouldShowWeatherInCelsiusKey) {
+            let tempInFahrenheit = temperatureConverter.convertCelsiusToFahrenheit(temperature: location.temperature)
+            
+            temperature = String(tempInFahrenheit)
+        }
+        
+        let displayText = "City: \(String(location.city)) - Weather: \(String(temperature)) @ \(String(location.timestamp.description))"
         
         cell.textLabel?.lineBreakMode = .byWordWrapping;
         cell.textLabel?.numberOfLines = 0
@@ -65,3 +77,6 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 }
+
+
+// NOTE ADD FUNCTIONALITY TO CONVERT TO FERHEIGHT

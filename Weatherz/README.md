@@ -6,6 +6,8 @@ This project serves as a practice project with various "controls," patterns and 
 
 There have been various times during interviews where you will be either creating a "toy" project, or expected to append/change a current project to evaluate knowledge.  The motiviation for this particular project is to exhaust a list of concepts as well as usage of various iOS items.
 
+I would like to mention that the purpose of this project is to remind myself of certain APIs or patterns that I use (or normally used) to stay fresh mentially.  This means that this project won't follow too many best practices or necessarily won't represent how I'd write production quality code.
+
 ## Item/Concept Checklist
 
 - [x] Initial project creation
@@ -25,7 +27,7 @@ There have been various times during interviews where you will be either creatin
 - [x] Use delegate pattern
 - [x] Create delegate pattern for custom structure
 - [x] Create an async method/function/manager
-- [ ] Use an activity monitor with async functionality
+- [x] Use an activity monitor with async functionality
 - [x] Create pattern for handling constants
 - [x] Deal with a http (not https) using domain exception with `NSAppTransportSecurity`
 - [x] Create generic function
