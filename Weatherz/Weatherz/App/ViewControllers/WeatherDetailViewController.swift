@@ -7,15 +7,17 @@ protocol WeatherDetailViewControllerDelegate: AnyObject {
 final class WeatherDetailViewController: UIViewController {
     // MARK: - IBOutlets
     
-    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var degreesLabel: UILabel!
-    
-    // MARK: - Readonly properties
+    @IBOutlet weak var errorLabel: UILabel!
+            
+    // MARK: - Public methods
     
     var weatherNetworkService = WeatherNetworkService()
+
+    var userDefaults = UserDefaults.standard
     
-    // MARK: - Public methods
+    var temperatureConverter = TemperatureConverter()
     
     var city: String?
     
@@ -26,16 +28,18 @@ final class WeatherDetailViewController: UIViewController {
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
-        if navigationController == nil {
-            closeButton.isHidden = false
-        }
+        super.viewDidLoad()
+        
+        cityLabel.text = city
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        weatherNetworkService.getCurrentWeather(city: city!) { result in
-            print(result)
+        weatherNetworkService.getCurrentWeather(city: city!) { [weak self] result in
+            guard let self = self else { return }
+            
+            self.weatherNetworkServiceHander(result: result)
         }
     }
     
@@ -43,5 +47,28 @@ final class WeatherDetailViewController: UIViewController {
     
     @IBAction func didTapCloseButton(_ sender: UIButton) {
         delegate?.didTapClose()
+    }
+    
+    // MARK: - Private methods
+    
+    private func weatherNetworkServiceHander(result: Result<Location, Error>) {
+        switch result {
+        case .success(let location):
+            updateDegreesLabel(temperature: location.temperature)
+        case .failure(let error):
+            errorLabel.text = error.localizedDescription
+        }
+    }
+    
+    private func updateDegreesLabel(temperature: Double) {
+        if userDefaults.bool(forKey: Constants.UserDefaultKeys.ShouldShowWeatherInCelsiusKey) {
+            degreesLabel.text = String(temperature)
+        } else {
+            let tempInFahrenheit = temperatureConverter.convertCelsiusToFahrenheit(temperature: temperature)
+            
+            degreesLabel.text = String(tempInFahrenheit)
+        }
+        
+        degreesLabel.isHidden = false
     }
 }

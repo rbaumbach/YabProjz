@@ -27,14 +27,41 @@
                                     <action selector="didTapCloseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LX8-O2-pkf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjL-nx-TkC">
+                                <rect key="frame" x="165" y="89" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show weather in celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayd-4w-RSo">
+                                <rect key="frame" x="25" y="210" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qb2-c4-zHS">
+                                <rect key="frame" x="319" y="205" width="51" height="31"/>
+                                <connections>
+                                    <action selector="celsiusToggleValueChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="aPO-jc-9d7"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Qb2-c4-zHS" secondAttribute="trailing" constant="25" id="1EF-dN-N6Q"/>
+                            <constraint firstItem="EjL-nx-TkC" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="GiB-Yw-L7f"/>
+                            <constraint firstItem="Qb2-c4-zHS" firstAttribute="centerY" secondItem="ayd-4w-RSo" secondAttribute="centerY" id="H0U-uq-a5K"/>
                             <constraint firstItem="hL0-2L-r0z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="SR8-rH-HKk"/>
+                            <constraint firstItem="EjL-nx-TkC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="Vfe-nw-zRa"/>
+                            <constraint firstItem="ayd-4w-RSo" firstAttribute="top" secondItem="EjL-nx-TkC" secondAttribute="bottom" constant="100" id="WR5-XQ-2bJ"/>
                             <constraint firstItem="hL0-2L-r0z" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="huR-vu-QVJ"/>
+                            <constraint firstItem="ayd-4w-RSo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="vbP-Ra-3Ag"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="celsiusToggle" destination="Qb2-c4-zHS" id="yFa-mF-u9K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

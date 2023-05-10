@@ -13,29 +13,22 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
     
     // MARK: - IBActions
     
-    @IBAction func didTapCheckWeatherModalButton(_ sender: UIButton) {        
-        let weatherDetailViewController = buildViewController(name: "WeatherDetailViewController") as! WeatherDetailViewController
+    @IBAction func didTapCheckWeatherButton(_ sender: UIButton) {
+        let weatherDetailViewController: WeatherDetailViewController = buildViewController(name: "WeatherDetailViewController")
+        weatherDetailViewController.delegate = self
         weatherDetailViewController.city = cityTextField.text
-        weatherDetailViewController.delegate = self
-                
-        present(weatherDetailViewController, animated: true)
-    }
-    
-    @IBAction func didTapCheckWeatherNavButton(_ sender: UIButton) {
-        let weatherDetailViewController = buildViewController(name: "WeatherDetailViewController") as! WeatherDetailViewController
-        weatherDetailViewController.delegate = self
                 
         navigationController?.pushViewController(weatherDetailViewController, animated: true)
     }
     
     @IBAction func didTapPreviousSearchesButton(_ sender: UIButton) {
-        let previousSearchesViewController = buildViewController(name: "PreviousSearchesViewController") as! PreviousSearchesViewController
+        let previousSearchesViewController: PreviousSearchesViewController = buildViewController(name: "PreviousSearchesViewController")
         
         navigationController?.pushViewController(previousSearchesViewController, animated: true)
     }
     
     @IBAction func didTapSettingsBarButton(_ sender: UIBarButtonItem) {
-        let settingsViewController = buildViewController(name: "SettingsViewController") as! SettingsViewController
+        let settingsViewController: SettingsViewController = buildViewController(name: "SettingsViewController")
         settingsViewController.delegate = self
         
         present(settingsViewController, animated: true)
@@ -43,7 +36,7 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
     
     // MARK: - Private methods
     
-    private func buildViewController(name: String) -> UIViewController {
+    private func buildViewController<T: UIViewController>(name: String) -> T {
         let storyboard = UIStoryboard(name: name, bundle: nil)
         
         return storyboard.instantiateInitialViewController()!

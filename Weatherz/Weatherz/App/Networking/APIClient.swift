@@ -29,37 +29,45 @@ final class APIClient {
         
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {
-                print("HTTP Request Failed \(String(describing: error))")
+                let result: Result<[String : Any], Error> = Result.failure(APIClientError.requestError)
+                
+                completionHandler(result)
                 
                 return
             }
             
             guard let response = (response as? HTTPURLResponse) else {
-                print("HTTP Request Failed: Response is malformed")
+                let result: Result<[String : Any], Error> = Result.failure(APIClientError.malformedResponseError)
+                
+                completionHandler(result)
                 
                 return
             }
             
             guard (200...299).contains(response.statusCode) else {
-                print("HTTP Request Failed: Non 200 status code")
+                let result: Result<[String : Any], Error> = Result.failure(APIClientError.invalidStatusCodeError)
+                
+                completionHandler(result)
                 
                 return
             }
             
             guard let data = data else {
-                print("HTTP Request Failed: Data is nil")
+                let result: Result<[String : Any], Error> = Result.failure(APIClientError.dataError)
+                
+                completionHandler(result)
                 
                 return
             }
             
             guard let dictResponse = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-                print("HTTP Request Failed: Cannot parse response")
+                let result: Result<[String : Any], Error> = Result.failure(APIClientError.responseJSONError)
+                
+                completionHandler(result)
                 
                 return
             }
-            
-            print(dictResponse)
-            
+                        
             let result: Result<[String : Any], Error> = Result.success(dictResponse)
             
             DispatchQueue.main.async {

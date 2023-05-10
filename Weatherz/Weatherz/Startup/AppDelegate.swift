@@ -2,8 +2,17 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    let userDefaults = UserDefaults.standard
+    let appSeeder = DataSeeder()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if !userDefaults.bool(forKey: Constants.UserDefaultKeys.HasRanAppOnce) {
+            appSeeder.seed()
+            
+            userDefaults.set(true, forKey: Constants.UserDefaultKeys.HasRanAppOnce)
+        }
+        
         return true
     }
 
