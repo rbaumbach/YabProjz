@@ -1,7 +1,20 @@
 import Foundation
 
+enum CurrentWeatherDeserializerError: Error {
+    case responseError
+}
+
 struct CurrentWeatherDeserializer {
-    func deserialize(response: [String: Any]) -> Location {
+    func deserialize(response: [String: Any],
+                     completionHandler: (Result<Location, Error>) -> Void) {
+        guard response["error"] == nil else {
+            let error: Result<Location, Error> = .failure(CurrentWeatherDeserializerError.responseError)
+            
+            completionHandler(error)
+            
+            return
+        }
+        
         let location = response["location"] as! [String: Any]
         let currentWeather = response["current"] as! [String: Any]
         
@@ -11,13 +24,17 @@ struct CurrentWeatherDeserializer {
         let lat = location["lat"] as! String
         let long = location["lon"] as! String
         let temperature = currentWeather["temperature"] as! Double
+                
+        let locationModel =  Location(city: city,
+                                      region: region,
+                                      country: country,
+                                      lat: Double(lat)!,
+                                      long: Double(long)!,
+                                      timestamp: Date(),
+                                      temperature: temperature)
         
-        return Location(city: city,
-                        region: region,
-                        country: country,
-                        lat: Double(lat)!,
-                        long: Double(long)!,
-                        timestamp: Date(),
-                        temperature: temperature)
+        let success: Result<Location, Error> = .success(locationModel)
+
+        completionHandler(success)
     }
 }

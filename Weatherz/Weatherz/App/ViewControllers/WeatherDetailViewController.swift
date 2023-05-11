@@ -62,7 +62,7 @@ final class WeatherDetailViewController: UIViewController {
             
             persistWeather(location: location)
         case .failure(let error):
-            errorLabel.text = error.localizedDescription
+            updateViewToError(error: error)
         }
     }
     
@@ -78,6 +78,17 @@ final class WeatherDetailViewController: UIViewController {
         cityLabel.isHidden = false
         weatherLabel.isHidden = false
         degreesLabel.isHidden = false
+        
+        activityIndicatorView.stopAnimating()
+    }
+    
+    private func updateViewToError(error: Error) {
+        errorLabel.text = error.localizedDescription
+        errorLabel.isHidden = false
+        
+        cityLabel.isHidden = true
+        weatherLabel.isHidden = true
+        degreesLabel.isHidden = true
         
         activityIndicatorView.stopAnimating()
     }

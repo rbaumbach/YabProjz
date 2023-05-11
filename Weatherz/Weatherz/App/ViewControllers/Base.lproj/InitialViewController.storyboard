@@ -49,6 +49,12 @@
                                     <action selector="didTapPreviousSearchesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IYF-Mc-Ihz"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5u-qi-G5v" userLabel="errorLabel">
+                                <rect key="frame" x="15" y="494" width="363" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,8 +62,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xf6-LZ-jQ0" secondAttribute="trailing" constant="15" id="6bH-bN-khE"/>
                             <constraint firstItem="VEe-g6-za4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7ek-xB-PmY"/>
                             <constraint firstItem="eX6-2A-wPG" firstAttribute="centerX" secondItem="xf6-LZ-jQ0" secondAttribute="centerX" id="8Qx-PX-rgT"/>
+                            <constraint firstItem="c5u-qi-G5v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="DZa-fT-418"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c5u-qi-G5v" secondAttribute="trailing" constant="15" id="H4i-py-gjs"/>
                             <constraint firstItem="0S6-Ip-MlN" firstAttribute="top" secondItem="VEe-g6-za4" secondAttribute="bottom" constant="131" id="JDS-Br-L5C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e5E-Pd-XEc" secondAttribute="bottom" constant="25" id="MgB-oF-bAS"/>
+                            <constraint firstItem="c5u-qi-G5v" firstAttribute="top" secondItem="eX6-2A-wPG" secondAttribute="bottom" constant="49" id="OkA-MM-bOo"/>
                             <constraint firstItem="VEe-g6-za4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RIe-sH-hn0"/>
                             <constraint firstItem="eX6-2A-wPG" firstAttribute="top" secondItem="xf6-LZ-jQ0" secondAttribute="bottom" constant="50" id="X5M-nA-3df"/>
                             <constraint firstItem="xf6-LZ-jQ0" firstAttribute="top" secondItem="0S6-Ip-MlN" secondAttribute="bottom" constant="50" id="ela-us-4e8"/>
@@ -75,6 +84,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cityTextField" destination="xf6-LZ-jQ0" id="ri8-vv-gc8"/>
+                        <outlet property="errorLabel" destination="c5u-qi-G5v" id="6UC-Te-s2i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -104,6 +114,9 @@
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

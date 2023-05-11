@@ -20,16 +20,8 @@ final class WeatherNetworkService {
                            completionHandler: @escaping (Result<Location, Error>) -> Void) {
         apiClient.request(endpoint: endpoint(),
                           parameters: parameters(city: city)) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let response):
-                let location = self.deserializer.deserialize(response: response)
-                
-                completionHandler(.success(location))
-            case .failure(let error):
-                completionHandler(.failure(error))
-            }
+            self?.apiReponseHandler(result: result,
+                                    completionHandler: completionHandler)
         }
     }
     
@@ -46,5 +38,40 @@ final class WeatherNetworkService {
     private func parameters(city: String) -> [String: String] {
         return ["access_key": apiKey(),
                 "query": city]
+    }
+    
+    private func apiReponseHandler(result: Result<[String: Any], Error>,
+                                   completionHandler: (Result<Location, Error>) -> Void) {
+        switch result {
+        case .success(let response):
+            self.handleResponse(response: response) { result in
+                switch result {
+                case .success(_):
+                    completionHandler(result)
+                case .failure(let error):
+                    let failure: Result<Location, Error> = .failure(error)
+                    
+                    completionHandler(failure)
+                }
+            }
+        case .failure(let error):
+            let failure: Result<Location, Error> = .failure(error)
+            
+            completionHandler(failure)
+        }
+    }
+    
+    private func handleResponse(response: [String: Any],
+                                completionHandler: (Result<Location, Error>) -> Void) {
+        deserializer.deserialize(response: response) { result in
+            switch result {
+            case .success(_):
+                completionHandler(result)
+            case .failure(let error):
+                let failure: Result<Location, Error> = .failure(error)
+                
+                completionHandler(failure)
+            }
+        }
     }
 }
