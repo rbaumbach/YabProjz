@@ -14,4 +14,9 @@ struct Constants {
     struct FileManagerFileNames {
         static let PersistedLocationsFileName = "persistedLocations.json"
     }
+    
+    struct SystemImageName {
+        static let DownArrow = "arrow.down"
+        static let UpArrow = "arrow.up"
+    }
 }

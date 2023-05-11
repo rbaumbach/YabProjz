@@ -22,7 +22,7 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [ ] "Push/Pop" (Navigation Controller) a Storyboard via Interface Builder
 - [x] Use MVC
 - [ ] Use a child view controller
-- [ ] Use MVVM
+- [ ] Use a ViewModel (MVVM)
 - [x] Use a UITableView
 - [x] Use delegate pattern
 - [x] Create delegate pattern for custom structure
@@ -55,7 +55,7 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [ ] Use forEach
   - [ ] Use filter
   - [ ] Use compactMap
-  - [ ] Use sort or sorted
+  - [x] Use sort or sorted
 - [ ] Unit Testing
   - [ ] Test a model
   - [ ] Test a view controller
