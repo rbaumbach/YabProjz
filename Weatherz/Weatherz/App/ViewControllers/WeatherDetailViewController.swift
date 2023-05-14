@@ -4,7 +4,7 @@ protocol WeatherDetailViewControllerDelegate: AnyObject {
     func didTapClose()
 }
 
-final class WeatherDetailViewController: UIViewController {
+final class WeatherDetailViewController: UIViewController, WeatherDetailViewModelDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var cityLabel: UILabel!
@@ -15,15 +15,9 @@ final class WeatherDetailViewController: UIViewController {
     
     // MARK: - Public methods
     
-    var weatherNetworkService = WeatherNetworkService()
-
-    var userDefaults = UserDefaults.standard
+    var city: String!
     
-    var temperatureConverter = TemperatureConverter()
-    
-    var fileManager = FileManager.default
-    
-    var city: String?
+    var weatherDetailViewModel: WeatherDetailViewModel!
     
     // MARK: - Properties
     
@@ -35,16 +29,23 @@ final class WeatherDetailViewController: UIViewController {
         super.viewDidLoad()
         
         cityLabel.text = city
+        
+        weatherDetailViewModel = WeatherDetailViewModel()
+        weatherDetailViewModel.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        weatherNetworkService.getCurrentWeather(city: city!) { [weak self] result in
-            guard let self = self else { return }
-            
-            self.weatherNetworkServiceHander(result: result)
-        }
+        weatherDetailViewModel.activate(city: city)
+    }
+    
+    func didUpdateTemperature(temperature: String) {
+        updateView(temperature: temperature)
+    }
+    
+    func didError(error: Error) {
+        updateViewToError(error: error)
     }
     
     // MARK: - IBActions
@@ -55,25 +56,8 @@ final class WeatherDetailViewController: UIViewController {
     
     // MARK: - Private methods
     
-    private func weatherNetworkServiceHander(result: Result<Location, Error>) {
-        switch result {
-        case .success(let location):
-            updateView(temperature: location.temperature)
-            
-            persistWeather(location: location)
-        case .failure(let error):
-            updateViewToError(error: error)
-        }
-    }
-    
-    private func updateView(temperature: Double) {
-        if userDefaults.bool(forKey: Constants.UserDefaultKeys.ShouldShowWeatherInCelsiusKey) {
-            degreesLabel.text = String(temperature)
-        } else {
-            let tempInFahrenheit = temperatureConverter.convertCelsiusToFahrenheit(temperature: temperature)
-            
-            degreesLabel.text = String(tempInFahrenheit)
-        }
+    private func updateView(temperature: String) {
+        degreesLabel.text = temperature
         
         cityLabel.isHidden = false
         weatherLabel.isHidden = false
@@ -91,15 +75,5 @@ final class WeatherDetailViewController: UIViewController {
         degreesLabel.isHidden = true
         
         activityIndicatorView.stopAnimating()
-    }
-    
-    private func persistWeather(location: Location) {
-        let fileName = Constants.FileManagerFileNames.PersistedLocationsFileName
-        
-        var previousLocations: [Location] = fileManager.readFromDocumentsDir(fileName: fileName) ?? []
-                
-        previousLocations.append(location)
-                
-        fileManager.saveToDocumentsDir(data: previousLocations, fileName: fileName)
     }
 }

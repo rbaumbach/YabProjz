@@ -22,7 +22,7 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [ ] "Push/Pop" (Navigation Controller) a Storyboard via Interface Builder
 - [x] Use MVC
 - [ ] Use a child view controller
-- [ ] Use a ViewModel (MVVM)
+- [x] Use a ViewModel (MVVM)
 - [x] Use a UITableView
 - [x] Use delegate pattern
 - [x] Create delegate pattern for custom structure
