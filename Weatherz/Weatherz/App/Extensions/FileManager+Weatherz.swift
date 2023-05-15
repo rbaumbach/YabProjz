@@ -1,6 +1,11 @@
 import Foundation
 
-extension FileManager {
+protocol FileManagerProtocol {
+    func readFromDocumentsDir<T: Codable>(fileName: String) -> T?
+    func saveToDocumentsDir(data: Codable, fileName: String)
+}
+
+extension FileManager: FileManagerProtocol {
     func documentsDirectory() -> URL {
         return (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))[0]
     }

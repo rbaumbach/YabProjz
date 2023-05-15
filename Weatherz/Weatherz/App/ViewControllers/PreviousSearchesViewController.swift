@@ -1,7 +1,6 @@
 import UIKit
 
 final class PreviousSearchesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
     // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!

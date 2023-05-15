@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		94130C4E2A0EADFC001DFDED /* WeatherDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94130C4D2A0EADFC001DFDED /* WeatherDetailViewModel.swift */; };
+		94130C502A11D0D9001DFDED /* UserDefaults+Weatherz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94130C4F2A11D0D9001DFDED /* UserDefaults+Weatherz.swift */; };
 		94168E7A2A0ACF45008823AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94168E792A0ACF45008823AC /* SettingsViewController.swift */; };
 		94168E7C2A0ACF5F008823AC /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94168E7B2A0ACF5F008823AC /* SettingsViewController.storyboard */; };
 		94168E7F2A0B0F84008823AC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94168E7E2A0B0F84008823AC /* Location.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		94130C4D2A0EADFC001DFDED /* WeatherDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewModel.swift; sourceTree = "<group>"; };
+		94130C4F2A11D0D9001DFDED /* UserDefaults+Weatherz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Weatherz.swift"; sourceTree = "<group>"; };
 		94168E792A0ACF45008823AC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		94168E7B2A0ACF5F008823AC /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		94168E7E2A0B0F84008823AC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				94168E882A0BC72A008823AC /* FileManager+Weatherz.swift */,
+				94130C4F2A11D0D9001DFDED /* UserDefaults+Weatherz.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				94168E862A0B1BE6008823AC /* DataSeeder.swift in Sources */,
 				94551CAB2A035086004F18A6 /* Constants.swift in Sources */,
 				94EF60552A0BDE04007EA22F /* ViewControllerBuilder.swift in Sources */,
+				94130C502A11D0D9001DFDED /* UserDefaults+Weatherz.swift in Sources */,
 				94168E812A0B1027008823AC /* CurrentWeatherDeserializer.swift in Sources */,
 				9447A1842A042CD5005E9EA0 /* APIClient.swift in Sources */,
 				94168E7A2A0ACF45008823AC /* SettingsViewController.swift in Sources */,

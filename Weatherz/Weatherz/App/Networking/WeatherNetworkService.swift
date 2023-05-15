@@ -1,6 +1,11 @@
 import Foundation
 
-final class WeatherNetworkService {
+protocol WeatherNetworkServiceProtocol {
+    func getCurrentWeather(city: String,
+                           completionHandler: @escaping (Result<Location, Error>) -> Void)
+}
+
+final class WeatherNetworkService: WeatherNetworkServiceProtocol {
     // MARK: - Private properties
     
     private let apiClient: APIClient

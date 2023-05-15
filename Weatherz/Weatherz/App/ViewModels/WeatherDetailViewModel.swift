@@ -14,9 +14,9 @@ protocol WeatherDetailViewModelDelegate: AnyObject {
 final class WeatherDetailViewModel: WeatherDetailViewModelProtcol {
     // MARK: - Private properties
     
-    private let userDefaults: UserDefaults
-    private let fileManager: FileManager
-    private let weatherNetworkService: WeatherNetworkService
+    private let userDefaults: UserDefaultsProtocol
+    private let fileManager: FileManagerProtocol
+    private let weatherNetworkService: WeatherNetworkServiceProtocol
     private let temperatureConverter: TemperatureConverter
     
     // MARK: - Public properties
@@ -25,9 +25,9 @@ final class WeatherDetailViewModel: WeatherDetailViewModelProtcol {
     
     // MARK: - Init methods
     
-    init(userDefaults: UserDefaults = UserDefaults.standard,
-         fileManager: FileManager = FileManager.default,
-         weatherNetworkService: WeatherNetworkService = WeatherNetworkService(),
+    init(userDefaults: UserDefaultsProtocol = UserDefaults.standard,
+         fileManager: FileManagerProtocol = FileManager.default,
+         weatherNetworkService: WeatherNetworkServiceProtocol = WeatherNetworkService(),
          temperatureConverter: TemperatureConverter = TemperatureConverter()) {
         self.userDefaults = userDefaults
         self.fileManager = fileManager
