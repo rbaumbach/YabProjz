@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		94130C4E2A0EADFC001DFDED /* WeatherDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94130C4D2A0EADFC001DFDED /* WeatherDetailViewModel.swift */; };
 		94130C502A11D0D9001DFDED /* UserDefaults+Weatherz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94130C4F2A11D0D9001DFDED /* UserDefaults+Weatherz.swift */; };
+		94130C522A14169C001DFDED /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94130C512A14169C001DFDED /* SettingsTableViewController.swift */; };
+		94130C542A141769001DFDED /* SettingsTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94130C532A141769001DFDED /* SettingsTableViewController.storyboard */; };
+		94130C582A143456001DFDED /* SettingsDeserializationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94130C572A143456001DFDED /* SettingsDeserializationTableViewController.swift */; };
+		94130C5B2A1435DF001DFDED /* JSONDeserializationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94130C5A2A1435DF001DFDED /* JSONDeserializationMode.swift */; };
 		94168E7A2A0ACF45008823AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94168E792A0ACF45008823AC /* SettingsViewController.swift */; };
 		94168E7C2A0ACF5F008823AC /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94168E7B2A0ACF5F008823AC /* SettingsViewController.storyboard */; };
 		94168E7F2A0B0F84008823AC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94168E7E2A0B0F84008823AC /* Location.swift */; };
@@ -48,6 +52,10 @@
 /* Begin PBXFileReference section */
 		94130C4D2A0EADFC001DFDED /* WeatherDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewModel.swift; sourceTree = "<group>"; };
 		94130C4F2A11D0D9001DFDED /* UserDefaults+Weatherz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Weatherz.swift"; sourceTree = "<group>"; };
+		94130C512A14169C001DFDED /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		94130C532A141769001DFDED /* SettingsTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTableViewController.storyboard; sourceTree = "<group>"; };
+		94130C572A143456001DFDED /* SettingsDeserializationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDeserializationTableViewController.swift; sourceTree = "<group>"; };
+		94130C5A2A1435DF001DFDED /* JSONDeserializationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDeserializationMode.swift; sourceTree = "<group>"; };
 		94168E792A0ACF45008823AC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		94168E7B2A0ACF5F008823AC /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
 		94168E7E2A0B0F84008823AC /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -103,6 +111,36 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		94130C552A1433F4001DFDED /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				94130C512A14169C001DFDED /* SettingsTableViewController.swift */,
+				94130C572A143456001DFDED /* SettingsDeserializationTableViewController.swift */,
+				94130C532A141769001DFDED /* SettingsTableViewController.storyboard */,
+				94130C592A1435CE001DFDED /* Models */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		94130C562A143401001DFDED /* PreviousSearches */ = {
+			isa = PBXGroup;
+			children = (
+				94D5B91C2A08A62E004EC3CF /* PreviousSearchesViewController.swift */,
+				94D5B91E2A08A64A004EC3CF /* PreviousSearchesViewController.storyboard */,
+				94168E8A2A0BDC5E008823AC /* PreviousWeatherDetailViewController.swift */,
+				94168E8C2A0BDC7E008823AC /* PreviousWeatherDetailViewController.storyboard */,
+			);
+			path = PreviousSearches;
+			sourceTree = "<group>";
+		};
+		94130C592A1435CE001DFDED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				94130C5A2A1435DF001DFDED /* JSONDeserializationMode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		94168E7D2A0B0EE7008823AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +167,15 @@
 				94130C4F2A11D0D9001DFDED /* UserDefaults+Weatherz.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		943081B82A143EF50032D71D /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				94168E792A0ACF45008823AC /* SettingsViewController.swift */,
+				94168E7B2A0ACF5F008823AC /* SettingsViewController.storyboard */,
+			);
+			path = Deprecated;
 			sourceTree = "<group>";
 		};
 		9447A1802A042C59005E9EA0 /* Networking */ = {
@@ -171,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				94551CAA2A035086004F18A6 /* Constants.swift */,
+				943081B82A143EF50032D71D /* Deprecated */,
 				94168E872A0BC714008823AC /* Extensions */,
 				9447A1802A042C59005E9EA0 /* Networking */,
 				94168E822A0B1A4A008823AC /* Utils */,
@@ -183,16 +231,12 @@
 		94D5B9202A08A664004EC3CF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				94F13DA72A034A3500686652 /* InitialViewController.storyboard */,
 				94F13DA52A034A3500686652 /* InitialViewController.swift */,
-				94D5B91E2A08A64A004EC3CF /* PreviousSearchesViewController.storyboard */,
-				94D5B91C2A08A62E004EC3CF /* PreviousSearchesViewController.swift */,
-				94168E8C2A0BDC7E008823AC /* PreviousWeatherDetailViewController.storyboard */,
-				94168E8A2A0BDC5E008823AC /* PreviousWeatherDetailViewController.swift */,
-				94168E7B2A0ACF5F008823AC /* SettingsViewController.storyboard */,
-				94168E792A0ACF45008823AC /* SettingsViewController.swift */,
+				94F13DA72A034A3500686652 /* InitialViewController.storyboard */,
 				94551CAC2A041A7B004F18A6 /* WeatherDetailViewController.storyboard */,
 				94551CAE2A041A8B004F18A6 /* WeatherDetailViewController.swift */,
+				94130C562A143401001DFDED /* PreviousSearches */,
+				94130C552A1433F4001DFDED /* Settings */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -317,6 +361,7 @@
 			files = (
 				94551CAD2A041A7B004F18A6 /* WeatherDetailViewController.storyboard in Resources */,
 				94F13DAE2A034A3600686652 /* LaunchScreen.storyboard in Resources */,
+				94130C542A141769001DFDED /* SettingsTableViewController.storyboard in Resources */,
 				94D5B91F2A08A64A004EC3CF /* PreviousSearchesViewController.storyboard in Resources */,
 				94F13DAB2A034A3600686652 /* Assets.xcassets in Resources */,
 				94168E7C2A0ACF5F008823AC /* SettingsViewController.storyboard in Resources */,
@@ -344,6 +389,7 @@
 				94168E8B2A0BDC5E008823AC /* PreviousWeatherDetailViewController.swift in Sources */,
 				94D5B91D2A08A62E004EC3CF /* PreviousSearchesViewController.swift in Sources */,
 				94168E7F2A0B0F84008823AC /* Location.swift in Sources */,
+				94130C5B2A1435DF001DFDED /* JSONDeserializationMode.swift in Sources */,
 				94168E842A0B1A60008823AC /* TemperatureConverter.swift in Sources */,
 				94F13DA22A034A3500686652 /* AppDelegate.swift in Sources */,
 				94551CAF2A041A8B004F18A6 /* WeatherDetailViewController.swift in Sources */,
@@ -351,11 +397,13 @@
 				94130C4E2A0EADFC001DFDED /* WeatherDetailViewModel.swift in Sources */,
 				94F13DA42A034A3500686652 /* SceneDelegate.swift in Sources */,
 				94168E862A0B1BE6008823AC /* DataSeeder.swift in Sources */,
+				94130C522A14169C001DFDED /* SettingsTableViewController.swift in Sources */,
 				94551CAB2A035086004F18A6 /* Constants.swift in Sources */,
 				94EF60552A0BDE04007EA22F /* ViewControllerBuilder.swift in Sources */,
 				94130C502A11D0D9001DFDED /* UserDefaults+Weatherz.swift in Sources */,
 				94168E812A0B1027008823AC /* CurrentWeatherDeserializer.swift in Sources */,
 				9447A1842A042CD5005E9EA0 /* APIClient.swift in Sources */,
+				94130C582A143456001DFDED /* SettingsDeserializationTableViewController.swift in Sources */,
 				94168E7A2A0ACF45008823AC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

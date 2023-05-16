@@ -1,5 +1,8 @@
 import UIKit
 
+// Note: This view controller was replaced with SettingsTableViewController
+// I'm only keeping this and the storyboard around for potential future reference
+
 protocol SettingsViewControllerDelegate: AnyObject {
     func didTapClose()
 }

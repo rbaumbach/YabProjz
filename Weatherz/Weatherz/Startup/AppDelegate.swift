@@ -7,10 +7,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        if !userDefaults.bool(forKey: Constants.UserDefaultKeys.HasRanAppOnce) {
+        if !userDefaults.bool(forKey: Constants.UserDefaultKeys.HasRanAppOnceKey) {
             appSeeder.seed()
             
-            userDefaults.set(true, forKey: Constants.UserDefaultKeys.HasRanAppOnce)
+            userDefaults.set(true, forKey: Constants.UserDefaultKeys.HasRanAppOnceKey)
         }
         
         print("DocumentsDirectory: \(FileManager.default.documentsDirectory())")

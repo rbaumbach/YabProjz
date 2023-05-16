@@ -19,7 +19,8 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [x] Programmatically present/dismiss (Modal) a Storyboard
   - [ ] Present/dismiss a Storyboard (Modal) via Interface Builder
   - [x] Programmatically "push/pop" (Navigation Controller) a Storyboard
-  - [ ] "Push/Pop" (Navigation Controller) a Storyboard via Interface Builder
+  - [x] "Push/Pop" (Navigation Controller) a Storyboard via Interface Builder
+  - [x] Use a UITableViewController (static content)
 - [x] Use MVC
 - [ ] Use a child view controller
 - [x] Use a ViewModel (MVVM)
@@ -46,13 +47,13 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [ ] Use method injection
 - [ ] Persistence
   - [x] Use UserDefaults
-  - [ ] Persist custom structure in UserDefaults
+  - [x] Persist custom structure in UserDefaults (Codable)
   - [x] Persist custom structure using Data type and Codable
   - [ ] Persist data in Keychain
 - [ ] Higher Order Functions
   - [x] Use map
   - [ ] Use reduce
-  - [ ] Use forEach
+  - [x] Use forEach
   - [ ] Use filter
   - [ ] Use compactMap
   - [x] Use sort or sorted

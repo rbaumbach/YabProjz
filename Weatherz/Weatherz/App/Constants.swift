@@ -8,7 +8,8 @@ struct Constants {
     
     struct UserDefaultKeys {
         static let ShouldShowWeatherInCelsiusKey = "ShouldShowWeatherInCelsiusKey"
-        static let HasRanAppOnce = "HasRanAppOnce"
+        static let HasRanAppOnceKey = "HasRanAppOnceKey"
+        static let StoredJSONDeserializationModeKey = "StoredJSONDeserializationModeKey"
     }
     
     struct FileManagerFileNames {

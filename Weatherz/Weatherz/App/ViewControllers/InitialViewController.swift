@@ -4,7 +4,7 @@ enum InitialViewControllerError: Error {
     case cityMissing
 }
 
-final class InitialViewController: UIViewController, WeatherDetailViewControllerDelegate, SettingsViewControllerDelegate {
+final class InitialViewController: UIViewController, WeatherDetailViewControllerDelegate, SettingsTableViewControllerDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var cityTextField: UITextField!
@@ -45,10 +45,12 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
     }
     
     @IBAction func didTapSettingsBarButton(_ sender: UIBarButtonItem) {
-        let settingsViewController: SettingsViewController = viewControllerBuilder.build(name: "SettingsViewController")
+        let rootViewController: UINavigationController = viewControllerBuilder.build(name: "SettingsTableViewController")
+        
+        let settingsViewController = rootViewController.topViewController as! SettingsTableViewController
         settingsViewController.delegate = self
         
-        present(settingsViewController, animated: true)
+        present(rootViewController, animated: true)
     }
     
     // MARK: - Private methods
