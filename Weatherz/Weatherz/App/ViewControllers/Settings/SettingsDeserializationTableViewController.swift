@@ -7,7 +7,7 @@ final class SettingsDeserializationTableViewController: UITableViewController {
     
     // MARK: - Views
     
-    var checkMarkImageView = UIImageView(image: UIImage(systemName: "checkmark"))
+    var checkMarkImageView = UIImageView(image: UIImage(systemName: Constants.SystemImageName.Checkmark))
         
     // MARK: - Public properties
     

@@ -19,5 +19,6 @@ struct Constants {
     struct SystemImageName {
         static let DownArrow = "arrow.down"
         static let UpArrow = "arrow.up"
+        static let Checkmark = "checkmark"
     }
 }
