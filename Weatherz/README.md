@@ -38,7 +38,7 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [x] Create response models
   - [x] Manually serialize a request
   - [x] Manually deserialize a response
-  - [ ] Use Codable with mismatching response data to model data
+  - [x] Use Codable with mismatching response data to model data
   - [x] Create a request with some headers
   - [x] Create error handling
   - [x] Create network service
