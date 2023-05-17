@@ -11,7 +11,7 @@ I would like to mention that the purpose of this project is to remind myself of 
 ## Item/Concept Checklist
 
 - [x] Initial project creation
-- [x] Storyboards
+- [ ] Storyboards
   - [x] Changing "Main" Storyboard to something else
   - [x] Using basic "controls"
   - [x] Using basic constraints
@@ -21,6 +21,7 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [x] Programmatically "push/pop" (Navigation Controller) a Storyboard
   - [x] "Push/Pop" (Navigation Controller) a Storyboard via Interface Builder
   - [x] Use a UITableViewController (static content)
+  - [x] Use prepareForSegue
 - [x] Use MVC
 - [ ] Use a child view controller
 - [x] Use a ViewModel (MVVM)
@@ -33,7 +34,7 @@ I would like to mention that the purpose of this project is to remind myself of 
 - [x] Create pattern for handling constants
 - [x] Deal with a http (not https) using domain exception with `NSAppTransportSecurity`
 - [x] Create generic function
-- [ ] API
+- [x] API
   - [x] Use URLSession
   - [x] Create response models
   - [x] Manually serialize a request
@@ -51,12 +52,12 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [x] Persist custom structure in UserDefaults (Codable)
   - [x] Persist custom structure using Data type and Codable
   - [ ] Persist data in Keychain
-- [ ] Higher Order Functions
+- [x] Higher Order Functions
   - [x] Use map
-  - [ ] Use reduce
+  - [x] Use reduce
   - [x] Use forEach
-  - [ ] Use filter
-  - [ ] Use compactMap
+  - [x] Use filter
+  - [x] Use compactMap
   - [x] Use sort or sorted
 - [ ] Unit Testing
   - [ ] Test a model

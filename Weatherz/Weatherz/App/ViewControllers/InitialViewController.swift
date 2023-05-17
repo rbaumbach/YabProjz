@@ -13,6 +13,7 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
     // MARK: - Public properties
     
     var viewControllerBuilder = ViewControllerBuilder()
+    var fileManager = FileManager.default
     
     // MARK: - <WeatherDetailViewControllerDelegate, SettingsViewController>
     
@@ -40,6 +41,7 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
     
     @IBAction func didTapPreviousSearchesButton(_ sender: UIButton) {
         let previousSearchesViewController: PreviousSearchesViewController = viewControllerBuilder.build(name: "PreviousSearchesViewController")
+        previousSearchesViewController.dataSource = fetchPreviousSearches()
         
         navigationController?.pushViewController(previousSearchesViewController, animated: true)
     }
@@ -70,5 +72,11 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
     
     private func hideError() {
         errorLabel.isHidden = false
+    }
+    
+    private func fetchPreviousSearches() -> [WeatherModel] {
+        let dataSourceFileName = Constants.FileManagerFileNames.PersistedWeatherModelsFileName
+        
+        return fileManager.readFromDocumentsDir(fileName: dataSourceFileName) ?? []
     }
 }

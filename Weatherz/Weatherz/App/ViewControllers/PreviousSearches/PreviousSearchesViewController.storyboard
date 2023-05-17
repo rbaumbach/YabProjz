@@ -17,21 +17,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M5M-ZZ-azD" userLabel="tableView">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="355"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="Rum-Gd-7nX"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="gwe-kj-d7S"/>
                                 </connections>
                             </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfK-Yr-126">
+                                <rect key="frame" x="0.0" y="414" width="393" height="438"/>
+                                <connections>
+                                    <segue destination="Usv-yP-39Y" kind="embed" identifier="PreviousSearchesAggregateViewControllerSegue" id="nZD-V4-ocn"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MfK-Yr-126" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="3gQ-0C-YHN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="M5M-ZZ-azD" secondAttribute="trailing" id="53H-E3-CoH"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="M5M-ZZ-azD" secondAttribute="bottom" id="ZPq-yd-5EY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MfK-Yr-126" secondAttribute="trailing" id="6vv-nP-1nl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="centerY" secondItem="M5M-ZZ-azD" secondAttribute="bottom" id="UqL-dO-wMw"/>
+                            <constraint firstAttribute="bottom" secondItem="MfK-Yr-126" secondAttribute="bottom" id="hIs-TC-6lx"/>
                             <constraint firstItem="M5M-ZZ-azD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ivz-r7-Whq"/>
                             <constraint firstItem="M5M-ZZ-azD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="mGw-VO-dRS"/>
+                            <constraint firstItem="MfK-Yr-126" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="oxN-Z4-nDW"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -42,7 +52,95 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="4"/>
+            <point key="canvasLocation" x="26.717557251908396" y="3.5211267605633805"/>
+        </scene>
+        <!--Previous Searches Aggregates View Controller-->
+        <scene sceneID="JW6-Lv-E9I">
+            <objects>
+                <viewController id="Usv-yP-39Y" customClass="PreviousSearchesAggregatesViewController" customModule="Weatherz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LWv-XM-dXD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="438"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total searches:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc2-eZ-N9F">
+                                <rect key="frame" x="16" y="18" width="115" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjQ-2X-GMt" userLabel="totalSearchCountLabel">
+                                <rect key="frame" x="366" y="18" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most searched city:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AN5-3A-fZP">
+                                <rect key="frame" x="16" y="47" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fq-s1-g45" userLabel="mostSearchedCityLabel">
+                                <rect key="frame" x="349" y="47" width="28" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Freezing cities:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1X-H7-pdI">
+                                <rect key="frame" x="16" y="76" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bg-j2-Qed" userLabel="totalFreezingCitiesLabel">
+                                <rect key="frame" x="366" y="76" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1st city named as number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="285-7S-J7H">
+                                <rect key="frame" x="16" y="105" width="200" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSH-OM-8Bp" userLabel="firstCityNamedAsNumberLabel">
+                                <rect key="frame" x="349" y="105" width="28" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RjQ-2X-GMt" firstAttribute="centerY" secondItem="Fc2-eZ-N9F" secondAttribute="centerY" id="5LD-w2-Dzv"/>
+                            <constraint firstItem="4Bg-j2-Qed" firstAttribute="trailing" secondItem="4Fq-s1-g45" secondAttribute="trailing" id="ALH-RI-biU"/>
+                            <constraint firstItem="pSH-OM-8Bp" firstAttribute="centerY" secondItem="285-7S-J7H" secondAttribute="centerY" id="APT-Kd-M0X"/>
+                            <constraint firstItem="f1X-H7-pdI" firstAttribute="leading" secondItem="AN5-3A-fZP" secondAttribute="leading" id="AdV-iA-hKf"/>
+                            <constraint firstItem="285-7S-J7H" firstAttribute="leading" secondItem="f1X-H7-pdI" secondAttribute="leading" id="CxA-Ll-s2P"/>
+                            <constraint firstAttribute="trailing" secondItem="RjQ-2X-GMt" secondAttribute="trailing" constant="16" id="G0W-jk-qDf"/>
+                            <constraint firstItem="AN5-3A-fZP" firstAttribute="top" secondItem="Fc2-eZ-N9F" secondAttribute="bottom" constant="8" symbolic="YES" id="Hhn-5G-sa4"/>
+                            <constraint firstItem="AN5-3A-fZP" firstAttribute="leading" secondItem="Fc2-eZ-N9F" secondAttribute="leading" id="OQX-8F-KDU"/>
+                            <constraint firstItem="f1X-H7-pdI" firstAttribute="top" secondItem="AN5-3A-fZP" secondAttribute="bottom" constant="8" symbolic="YES" id="Sl2-lt-byZ"/>
+                            <constraint firstItem="4Fq-s1-g45" firstAttribute="centerY" secondItem="AN5-3A-fZP" secondAttribute="centerY" id="UrV-OH-6Za"/>
+                            <constraint firstItem="pSH-OM-8Bp" firstAttribute="trailing" secondItem="4Bg-j2-Qed" secondAttribute="trailing" id="VLB-5a-wgP"/>
+                            <constraint firstItem="285-7S-J7H" firstAttribute="top" secondItem="f1X-H7-pdI" secondAttribute="bottom" constant="8" symbolic="YES" id="bbZ-wv-jlV"/>
+                            <constraint firstItem="Fc2-eZ-N9F" firstAttribute="top" secondItem="LWv-XM-dXD" secondAttribute="top" constant="18" id="hrE-Tt-3Qn"/>
+                            <constraint firstItem="Fc2-eZ-N9F" firstAttribute="leading" secondItem="LWv-XM-dXD" secondAttribute="leading" constant="16" id="p9C-ZA-XNM"/>
+                            <constraint firstItem="4Fq-s1-g45" firstAttribute="trailing" secondItem="RjQ-2X-GMt" secondAttribute="trailing" id="pgh-kd-Opa"/>
+                            <constraint firstItem="4Bg-j2-Qed" firstAttribute="centerY" secondItem="f1X-H7-pdI" secondAttribute="centerY" id="y8w-ng-KCt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstCityNamedAsNumberLabel" destination="pSH-OM-8Bp" id="Knj-Wb-6kN"/>
+                        <outlet property="mostSearchedCityLabel" destination="4Fq-s1-g45" id="Szl-EO-URd"/>
+                        <outlet property="totalFreezingCitiesLabel" destination="4Bg-j2-Qed" id="fAO-9L-CeM"/>
+                        <outlet property="totalSearchCountLabel" destination="RjQ-2X-GMt" id="Soy-JU-lMs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmQ-B4-6Lp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087.7862595419847" y="270.42253521126764"/>
         </scene>
     </scenes>
     <resources>

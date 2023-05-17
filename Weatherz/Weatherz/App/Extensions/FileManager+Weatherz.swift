@@ -13,8 +13,6 @@ extension FileManager: FileManagerProtocol {
     func readFromDocumentsDir<T: Codable>(fileName: String) -> T? {
         let documentsDir = documentsDirectory()
         let fullURL = documentsDir.appendingPathComponent(fileName)
-                
-        print(fullURL)
         
         guard let encodedData = FileManager.default.contents(atPath: fullURL.path) else {
             return nil

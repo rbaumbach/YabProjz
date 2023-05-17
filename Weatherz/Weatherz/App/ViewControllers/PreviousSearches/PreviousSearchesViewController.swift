@@ -10,9 +10,7 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
     var dataSource: [WeatherModel]!
     
     var userDefaults = UserDefaults.standard
-    
-    var fileManager = FileManager.default
-    
+        
     var viewControllerBuilder = ViewControllerBuilder()
     
     var temperatureConverter = TemperatureConverter()
@@ -25,8 +23,20 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         setupViewController()
+    }
+    
+    // MARK: - UIViewController
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PreviousSearchesAggregateViewControllerSegue" {
+            guard let viewController = segue.destination as? PreviousSearchesAggregatesViewController else {
+                return
+            }
+            
+            viewController.dataSource = dataSource
+        }
     }
     
     // MARK: - <UITableViewDataSource>
@@ -100,14 +110,7 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
                                                                 action: #selector(sortBarButtonItemTapped))
         }
         
-        setupDataSource()
         setupTableView()
-    }
-    
-    private func setupDataSource() {
-        let dataSourceFileName = Constants.FileManagerFileNames.PersistedWeatherModelsFileName
-        
-        dataSource = fileManager.readFromDocumentsDir(fileName: dataSourceFileName)
     }
     
     private func setupTableView() {
