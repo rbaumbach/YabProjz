@@ -73,9 +73,9 @@ final class APIClient {
         dataTask.resume()
     }
     
-    func request<T: Codable>(endpoint: String,
-                             parameters: [String: String],
-                             completionHandler: @escaping (Result<T, Error>) -> Void) {
+    func requestAndDeserialize<T: Codable>(endpoint: String,
+                                           parameters: [String: String],
+                                           completionHandler: @escaping (Result<T, Error>) -> Void) {
         requestData(endpoint: endpoint, parameters: parameters) { data, error in
             if let error = error {
                 let result: Result<T, Error> = Result.failure(error)
@@ -93,17 +93,17 @@ final class APIClient {
                 return
             }
             
-            guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
-                let result: Result<T, Error> = Result.failure(APIClientError.responseJSONError)
+            do {
+                let decodedData = try JSONDecoder().decode(T.self, from: data)
+                
+                let success: Result<T, Error> = Result.success(decodedData)
 
-                completionHandler(result)
-
-                return
+                completionHandler(success)
+            } catch {
+                let failure: Result<T, Error> = Result.failure(error)
+                
+                completionHandler(failure)
             }
-
-            let result: Result<T, Error> = Result.success(decodedData)
-
-            completionHandler(result)
         }
     }
     

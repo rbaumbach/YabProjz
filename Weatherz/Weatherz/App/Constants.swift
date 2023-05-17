@@ -13,7 +13,7 @@ struct Constants {
     }
     
     struct FileManagerFileNames {
-        static let PersistedLocationsFileName = "persistedLocations.json"
+        static let PersistedWeatherModelsFileName = "persistedWeatherModels.json"
     }
     
     struct SystemImageName {

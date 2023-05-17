@@ -12,7 +12,7 @@ final class PreviousWeatherDetailViewController: UIViewController {
     var userDefaults = UserDefaults.standard
     var temperatureConverter = TemperatureConverter()
     
-    var location: Location!
+    var weatherModel: WeatherModel!
     
     // MARK: - View lifecycle
     
@@ -25,16 +25,16 @@ final class PreviousWeatherDetailViewController: UIViewController {
     // MARK: - Private methods
     
     private func setup() {
-        cityLabel.text = location.city
+        cityLabel.text = weatherModel.city
         
         if userDefaults.bool(forKey: Constants.UserDefaultKeys.ShouldShowWeatherInCelsiusKey) {
-            degreesLabel.text = String(location.temperature)
+            degreesLabel.text = String(weatherModel.temperature)
         } else {
-            let tempInFahrenheit = temperatureConverter.convertCelsiusToFahrenheit(temperature: location.temperature)
+            let tempInFahrenheit = temperatureConverter.convertCelsiusToFahrenheit(temperature: weatherModel.temperature)
             
             degreesLabel.text = String(tempInFahrenheit)
         }
                 
-        timestampLabel.text = String(location.timestamp.description)
+        timestampLabel.text = String(weatherModel.timestamp.description)
     }
 }

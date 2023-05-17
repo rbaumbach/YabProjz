@@ -25,6 +25,7 @@ I would like to mention that the purpose of this project is to remind myself of 
 - [ ] Use a child view controller
 - [x] Use a ViewModel (MVVM)
 - [x] Use a UITableView
+- [ ] Use a UICollectionView
 - [x] Use delegate pattern
 - [x] Create delegate pattern for custom structure
 - [x] Create an async method/function/manager

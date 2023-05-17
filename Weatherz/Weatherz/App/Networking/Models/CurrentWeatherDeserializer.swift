@@ -6,9 +6,9 @@ enum CurrentWeatherDeserializerError: Error {
 
 struct CurrentWeatherDeserializer {
     func deserialize(response: [String: Any],
-                     completionHandler: (Result<Location, Error>) -> Void) {
+                     completionHandler: (Result<WeatherModel, Error>) -> Void) {
         guard response["error"] == nil else {
-            let error: Result<Location, Error> = .failure(CurrentWeatherDeserializerError.responseError)
+            let error: Result<WeatherModel, Error> = .failure(CurrentWeatherDeserializerError.responseError)
             
             completionHandler(error)
             
@@ -24,17 +24,17 @@ struct CurrentWeatherDeserializer {
         let lat = location["lat"] as! String
         let long = location["lon"] as! String
         let temperature = currentWeather["temperature"] as! Double
-                
-        let locationModel =  Location(city: city,
-                                      region: region,
-                                      country: country,
-                                      lat: Double(lat)!,
-                                      long: Double(long)!,
-                                      timestamp: Date(),
-                                      temperature: temperature)
         
-        let success: Result<Location, Error> = .success(locationModel)
-
+        let weatherModel =  WeatherModel(city: city,
+                                         region: region,
+                                         country: country,
+                                         lat: Double(lat)!,
+                                         long: Double(long)!,
+                                         timestamp: Date(),
+                                         temperature: temperature)
+        
+        let success: Result<WeatherModel, Error> = .success(weatherModel)
+        
         completionHandler(success)
     }
 }

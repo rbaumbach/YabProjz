@@ -45,12 +45,12 @@ final class WeatherDetailViewModel: WeatherDetailViewModelProtcol {
     
     // MARK: - Private methods
     
-    private func weatherNetworkServiceHander(result: Result<Location, Error>) {
+    private func weatherNetworkServiceHander(result: Result<WeatherModel, Error>) {
         switch result {
-        case .success(let location):
-            persistWeather(location: location)
+        case .success(let weatherModel):
+            persistWeather(weatherModel: weatherModel)
             
-            let newTemperature = processTemperature(location: location)
+            let newTemperature = processTemperature(weatherModel: weatherModel)
             
             self.delegate?.didUpdateTemperature(temperature: newTemperature)
         case .failure(let error):
@@ -58,21 +58,21 @@ final class WeatherDetailViewModel: WeatherDetailViewModelProtcol {
         }
     }
     
-    private func persistWeather(location: Location) {
-        let fileName = Constants.FileManagerFileNames.PersistedLocationsFileName
+    private func persistWeather(weatherModel: WeatherModel) {
+        let fileName = Constants.FileManagerFileNames.PersistedWeatherModelsFileName
         
-        var previousLocations: [Location] = fileManager.readFromDocumentsDir(fileName: fileName) ?? []
+        var previousWeatherModels: [WeatherModel] = fileManager.readFromDocumentsDir(fileName: fileName) ?? []
                 
-        previousLocations.append(location)
+        previousWeatherModels.append(weatherModel)
                 
-        fileManager.saveToDocumentsDir(data: previousLocations, fileName: fileName)
+        fileManager.saveToDocumentsDir(data: previousWeatherModels, fileName: fileName)
     }
     
-    private func processTemperature(location: Location) -> String {
+    private func processTemperature(weatherModel: WeatherModel) -> String {
         if userDefaults.bool(forKey: Constants.UserDefaultKeys.ShouldShowWeatherInCelsiusKey) {
-            return String(location.temperature)
+            return String(weatherModel.temperature)
         } else {
-            let tempInFahrenheit = temperatureConverter.convertCelsiusToFahrenheit(temperature: location.temperature)
+            let tempInFahrenheit = temperatureConverter.convertCelsiusToFahrenheit(temperature: weatherModel.temperature)
             
             return String(tempInFahrenheit)
         }

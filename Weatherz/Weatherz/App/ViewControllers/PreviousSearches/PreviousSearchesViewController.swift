@@ -7,7 +7,7 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
     
     // MARK: - Readonly properties
     
-    var dataSource: [Location]!
+    var dataSource: [WeatherModel]!
     
     var userDefaults = UserDefaults.standard
     
@@ -38,17 +38,17 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let location = dataSource[indexPath.row]
+        let weatherModel = dataSource[indexPath.row]
         
-        var temperature = String(location.temperature)
+        var temperature = String(weatherModel.temperature)
         
         if !userDefaults.bool(forKey: Constants.UserDefaultKeys.ShouldShowWeatherInCelsiusKey) {
-            let tempInFahrenheit = temperatureConverter.convertCelsiusToFahrenheit(temperature: location.temperature)
+            let tempInFahrenheit = temperatureConverter.convertCelsiusToFahrenheit(temperature: weatherModel.temperature)
             
             temperature = String(tempInFahrenheit)
         }
         
-        let displayText = "City: \(String(location.city)) - Weather: \(String(temperature)) @ \(String(location.timestamp.description))"
+        let displayText = "City: \(String(weatherModel.city)) - Weather: \(String(temperature)) @ \(String(weatherModel.timestamp.description))"
         
         cell.textLabel?.lineBreakMode = .byWordWrapping;
         cell.textLabel?.numberOfLines = 0
@@ -61,7 +61,7 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc: PreviousWeatherDetailViewController = viewControllerBuilder.build(name: "PreviousWeatherDetailViewController")
-        vc.location = dataSource[indexPath.row]
+        vc.weatherModel = dataSource[indexPath.row]
         
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -74,14 +74,14 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
         if isSortedInDescendingOrder {
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: Constants.SystemImageName.UpArrow)
             
-            dataSource.sort { location1, location2 in
-                return location1.timestamp > location2.timestamp
+            dataSource.sort { weatherModel1, weatherModel2 in
+                return weatherModel1.timestamp > weatherModel2.timestamp
             }
         } else {
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: Constants.SystemImageName.DownArrow)
             
-            dataSource.sort { location1, location2 in
-                return location1.timestamp < location2.timestamp
+            dataSource.sort { weatherModel1, weatherModel2 in
+                return weatherModel1.timestamp < weatherModel2.timestamp
             }
         }
         
@@ -105,7 +105,7 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
     }
     
     private func setupDataSource() {
-        let dataSourceFileName = Constants.FileManagerFileNames.PersistedLocationsFileName
+        let dataSourceFileName = Constants.FileManagerFileNames.PersistedWeatherModelsFileName
         
         dataSource = fileManager.readFromDocumentsDir(fileName: dataSourceFileName)
     }

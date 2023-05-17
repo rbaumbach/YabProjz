@@ -1,6 +1,6 @@
 import Foundation
 
-struct Location: Codable {
+struct WeatherModel: Codable {
     let city: String
     let region: String
     let country: String
