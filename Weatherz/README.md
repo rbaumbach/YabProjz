@@ -39,7 +39,7 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [x] Manually serialize a request
   - [x] Manually deserialize a response
   - [ ] Use Codable with mismatching response data to model data
-  - [ ] Create a request with some headers
+  - [x] Create a request with some headers
   - [x] Create error handling
   - [x] Create network service
 - [ ] Dependency Injection

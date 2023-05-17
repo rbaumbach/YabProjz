@@ -29,16 +29,17 @@ final class WeatherNetworkService: WeatherNetworkServiceProtocol {
         switch jsonDeserializationMode().mode {
         case .manualMode:
             apiClient.request(endpoint: endpoint(),
+                              headers: headers(),
                               parameters: parameters(city: city)) { [weak self] result in
                 self?.apiReponseHandler(result: result,
                                         completionHandler: completionHandler)
             }
         case .codableMode:
             apiClient.requestAndDeserialize(endpoint: endpoint(),
-                                            parameters: parameters(city: city)) { (result: Result<Response, Error>) -> Void in
+                                            parameters: parameters(city: city)) { (result: Result<Response, Error>) in
                 switch result {
                 case .success(let response):
-                    let weatherModel = WeatherModel(city: city,
+                    let weatherModel = WeatherModel(city: response.location.city,
                                                     region: response.location.region,
                                                     country: response.location.country,
                                                     lat: Double(response.location.lat)!,
@@ -56,7 +57,26 @@ final class WeatherNetworkService: WeatherNetworkServiceProtocol {
                 }
             }
         case .crazyCodable:
-            print("Not implemented yet....TBD")
+            apiClient.requestAndDeserializeFakeResponse(response: FakeCurrentWeatherJSON().build()) { (result: Result<Response, Error>) in
+                switch result {
+                case .success(let response):
+                    let weatherModel = WeatherModel(city: response.location.city,
+                                                    region: response.location.region,
+                                                    country: response.location.country,
+                                                    lat: Double(response.location.lat)!,
+                                                    long: Double(response.location.lon)!,
+                                                    timestamp: Date(),
+                                                    temperature: Double(response.current.temperature))
+                    
+                    let success: Result<WeatherModel, Error> = .success(weatherModel)
+                    
+                    completionHandler(success)
+                case .failure(let error):
+                    let failure: Result<WeatherModel, Error> = .failure(error)
+                    
+                    completionHandler(failure)
+                }
+            }
         }
     }
     
@@ -68,6 +88,10 @@ final class WeatherNetworkService: WeatherNetworkServiceProtocol {
     
     private func endpoint() -> String {
         return "/current"
+    }
+    
+    private func headers() -> [String: String] {
+        return ["bogus": "just-to-do-it"]
     }
     
     private func parameters(city: String) -> [String: String] {

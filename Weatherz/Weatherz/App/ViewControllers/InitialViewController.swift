@@ -33,7 +33,7 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
         
         let weatherDetailViewController: WeatherDetailViewController = viewControllerBuilder.build(name: "WeatherDetailViewController")
         weatherDetailViewController.delegate = self
-        weatherDetailViewController.city = city
+        weatherDetailViewController.cityToWeatherCheck = city
         
         navigationController?.pushViewController(weatherDetailViewController, animated: true)
     }

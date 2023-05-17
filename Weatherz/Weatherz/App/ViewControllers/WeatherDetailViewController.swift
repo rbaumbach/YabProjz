@@ -15,7 +15,7 @@ final class WeatherDetailViewController: UIViewController, WeatherDetailViewMode
     
     // MARK: - Public methods
     
-    var city: String!
+    var cityToWeatherCheck: String!
     
     var weatherDetailViewModel: WeatherDetailViewModel!
     
@@ -28,8 +28,6 @@ final class WeatherDetailViewController: UIViewController, WeatherDetailViewMode
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cityLabel.text = city
-        
         weatherDetailViewModel = WeatherDetailViewModel()
         weatherDetailViewModel.delegate = self
     }
@@ -37,11 +35,12 @@ final class WeatherDetailViewController: UIViewController, WeatherDetailViewMode
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        weatherDetailViewModel.activate(city: city)
+        weatherDetailViewModel.activate(city: cityToWeatherCheck)
     }
     
-    func didUpdateTemperature(temperature: String) {
-        updateView(temperature: temperature)
+    func didUpdate(city: String, temperature: String) {
+        updateView(city: city,
+                   temperature: temperature)
     }
     
     func didError(error: Error) {
@@ -56,7 +55,9 @@ final class WeatherDetailViewController: UIViewController, WeatherDetailViewMode
     
     // MARK: - Private methods
     
-    private func updateView(temperature: String) {
+    private func updateView(city: String,
+                            temperature: String) {
+        cityLabel.text = city
         degreesLabel.text = temperature
         
         cityLabel.isHidden = false

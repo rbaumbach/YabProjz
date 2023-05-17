@@ -15,11 +15,15 @@ final class APIClient {
         self.baseURL = baseURL
     }
     
+    // TODO: Share dataTask logic between both request methods
+    
     func request(endpoint: String,
+                 headers: [String: String]? = nil,
                  parameters: [String: String],
                  completionHandler: @escaping (Result<[String: Any], Error>) -> Void) {
         let urlRequest = constructURLRequest(baseURL: baseURL,
                                              endpoint: endpoint,
+                                             headers: headers,
                                              parameters: parameters)
         
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
@@ -107,10 +111,28 @@ final class APIClient {
         }
     }
     
+    func requestAndDeserializeFakeResponse<T: Codable>(response: String,
+                                                       completionHandler: @escaping (Result<T, Error>) -> Void) {
+        do {
+            let responseData = Data(response.utf8)
+            
+            let decodedData = try JSONDecoder().decode(T.self, from: responseData)
+            
+            let success: Result<T, Error> = Result.success(decodedData)
+
+            completionHandler(success)
+        } catch {
+            let failure: Result<T, Error> = Result.failure(error)
+            
+            completionHandler(failure)
+        }
+    }
+    
     // MARK: - Private methods
     
     private func constructURLRequest(baseURL: String,
                                      endpoint: String,
+                                     headers: [String: String]?,
                                      parameters: [String: String]) -> URLRequest {
         var urlComponents = URLComponents(string: baseURL)!
         urlComponents.path = endpoint
@@ -119,7 +141,11 @@ final class APIClient {
             return URLQueryItem(name: key, value: value)
         }
         
-        let urlRequest = URLRequest(url: urlComponents.url!)
+        var urlRequest = URLRequest(url: urlComponents.url!)
+        
+        headers?.forEach { key, value in
+            urlRequest.addValue(value, forHTTPHeaderField: key)
+        }
         
         return urlRequest
     }
@@ -129,6 +155,7 @@ final class APIClient {
                              completionHandler: @escaping (Data?, Error?) -> Void) {
         let urlRequest = constructURLRequest(baseURL: baseURL,
                                              endpoint: endpoint,
+                                             headers: nil,
                                              parameters: parameters)
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {

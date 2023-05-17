@@ -6,8 +6,10 @@ protocol WeatherDetailViewModelProtcol {
     func activate(city: String)
 }
 
+// do something nice here
+
 protocol WeatherDetailViewModelDelegate: AnyObject {
-    func didUpdateTemperature(temperature: String)
+    func didUpdate(city: String, temperature: String)
     func didError(error: Error)
 }
 
@@ -51,8 +53,9 @@ final class WeatherDetailViewModel: WeatherDetailViewModelProtcol {
             persistWeather(weatherModel: weatherModel)
             
             let newTemperature = processTemperature(weatherModel: weatherModel)
-            
-            self.delegate?.didUpdateTemperature(temperature: newTemperature)
+
+            self.delegate?.didUpdate(city: weatherModel.city,
+                                     temperature: newTemperature)
         case .failure(let error):
             self.delegate?.didError(error: error)
         }
