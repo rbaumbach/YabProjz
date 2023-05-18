@@ -55,6 +55,12 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YzD-rg-ZNz">
+                                <rect key="frame" x="15" y="687.66666666666663" width="363" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -65,11 +71,14 @@
                             <constraint firstItem="c5u-qi-G5v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="DZa-fT-418"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c5u-qi-G5v" secondAttribute="trailing" constant="15" id="H4i-py-gjs"/>
                             <constraint firstItem="0S6-Ip-MlN" firstAttribute="top" secondItem="VEe-g6-za4" secondAttribute="bottom" constant="131" id="JDS-Br-L5C"/>
+                            <constraint firstItem="YzD-rg-ZNz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="JvD-91-yCa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e5E-Pd-XEc" secondAttribute="bottom" constant="25" id="MgB-oF-bAS"/>
                             <constraint firstItem="c5u-qi-G5v" firstAttribute="top" secondItem="eX6-2A-wPG" secondAttribute="bottom" constant="49" id="OkA-MM-bOo"/>
                             <constraint firstItem="VEe-g6-za4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RIe-sH-hn0"/>
                             <constraint firstItem="eX6-2A-wPG" firstAttribute="top" secondItem="xf6-LZ-jQ0" secondAttribute="bottom" constant="50" id="X5M-nA-3df"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YzD-rg-ZNz" secondAttribute="trailing" constant="15" id="aCu-9W-Rkq"/>
                             <constraint firstItem="xf6-LZ-jQ0" firstAttribute="top" secondItem="0S6-Ip-MlN" secondAttribute="bottom" constant="50" id="ela-us-4e8"/>
+                            <constraint firstItem="e5E-Pd-XEc" firstAttribute="top" secondItem="YzD-rg-ZNz" secondAttribute="bottom" constant="50" id="fVg-Py-Oz8"/>
                             <constraint firstItem="xf6-LZ-jQ0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="hb0-RO-9Op"/>
                             <constraint firstItem="e5E-Pd-XEc" firstAttribute="centerX" secondItem="eX6-2A-wPG" secondAttribute="centerX" id="sIe-D4-WsK"/>
                             <constraint firstItem="0S6-Ip-MlN" firstAttribute="centerX" secondItem="VEe-g6-za4" secondAttribute="centerX" id="y6K-Jj-rR7"/>
@@ -85,6 +94,7 @@
                     <connections>
                         <outlet property="cityTextField" destination="xf6-LZ-jQ0" id="ri8-vv-gc8"/>
                         <outlet property="errorLabel" destination="c5u-qi-G5v" id="6UC-Te-s2i"/>
+                        <outlet property="messageLabel" destination="YzD-rg-ZNz" id="vt9-R7-9Ms"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -34,7 +34,8 @@ I would like to mention that the purpose of this project is to remind myself of 
 - [x] Create pattern for handling constants
 - [x] Deal with a http (not https) using domain exception with `NSAppTransportSecurity`
 - [x] Create generic function
-- [ ] Use NotificationCenter
+- [x] Use NotificationCenter
+- [x] Use a random number generator
 - [x] API
   - [x] Use URLSession
   - [x] Create response models

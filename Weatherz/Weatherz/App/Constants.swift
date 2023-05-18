@@ -21,4 +21,12 @@ struct Constants {
         static let UpArrow = "arrow.up"
         static let Checkmark = "checkmark"
     }
+    
+    struct Messages {
+        static let Hello = "Hello Sir =)"
+        static let YoureBack = "I see you're back"
+        static let IsItColdOutside = "Is it cold outside?"
+        static let AvengersAssemble = "Avengers Assemble!"
+        static let PowerAndResponsibility = "With great power comes great responsibility."
+    }
 }

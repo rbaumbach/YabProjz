@@ -9,11 +9,25 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
     
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     // MARK: - Public properties
     
     var viewControllerBuilder = ViewControllerBuilder()
     var fileManager = FileManager.default
+    var notificationCenter = NotificationCenter.default
+    var appMessage = AppMessage()
+    
+    // MARK: - View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        notificationCenter.addObserver(self,
+                                       selector: #selector(appMovedToForeground),
+                                       name: UIApplication.willEnterForegroundNotification,
+                                       object: nil)
+    }
     
     // MARK: - <WeatherDetailViewControllerDelegate, SettingsViewController>
     
@@ -53,6 +67,14 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
         settingsViewController.delegate = self
         
         present(rootViewController, animated: true)
+    }
+    
+    // MARK: - NotificationCenter
+    
+    @objc
+    func appMovedToForeground() {
+        messageLabel.text = appMessage.randomMessage()
+        messageLabel.isHidden = false
     }
     
     // MARK: - Private methods
