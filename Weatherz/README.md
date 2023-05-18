@@ -11,19 +11,19 @@ I would like to mention that the purpose of this project is to remind myself of 
 ## Item/Concept Checklist
 
 - [x] Initial project creation
-- [ ] Storyboards
+- [x] Storyboards
   - [x] Changing "Main" Storyboard to something else
   - [x] Using basic "controls"
   - [x] Using basic constraints
   - [x] "Wiring Up" `IBOutlets` and `IBActions`
   - [x] Programmatically present/dismiss (Modal) a Storyboard
-  - [ ] Present/dismiss a Storyboard (Modal) via Interface Builder
+  - [x] Present/dismiss a Storyboard (Modal) via Interface Builder
   - [x] Programmatically "push/pop" (Navigation Controller) a Storyboard
   - [x] "Push/Pop" (Navigation Controller) a Storyboard via Interface Builder
   - [x] Use a UITableViewController (static content)
   - [x] Use prepareForSegue
 - [x] Use MVC
-- [ ] Use a child view controller
+- [x] Use a child view controller
 - [x] Use a ViewModel (MVVM)
 - [x] Use a UITableView
 - [ ] Use a UICollectionView
@@ -34,6 +34,7 @@ I would like to mention that the purpose of this project is to remind myself of 
 - [x] Create pattern for handling constants
 - [x] Deal with a http (not https) using domain exception with `NSAppTransportSecurity`
 - [x] Create generic function
+- [ ] Use NotificationCenter
 - [x] API
   - [x] Use URLSession
   - [x] Create response models
@@ -66,6 +67,6 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [ ] Test a view model
   - [ ] Test an async method
   - [ ] Test usage of a DispatchQueue
-  - [ ] Mock out AppDelegate
+  - [x] Mock out AppDelegate
   - [ ] Mock out a Foundation API using extensions
   - [ ] Mock out a Foundation API creating a wrapper

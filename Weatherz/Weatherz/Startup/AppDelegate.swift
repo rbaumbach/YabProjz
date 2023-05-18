@@ -1,6 +1,5 @@
 import UIKit
 
-@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let userDefaults = UserDefaults.standard
     let appSeeder = DataSeeder()

@@ -79,7 +79,6 @@ final class PreviousSearchesViewController: UIViewController, UITableViewDataSou
     // MARK: - Actions
     
     @objc
-    
     func sortBarButtonItemTapped(_ sender: UIBarButtonItem) {
         if isSortedInDescendingOrder {
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: Constants.SystemImageName.UpArrow)

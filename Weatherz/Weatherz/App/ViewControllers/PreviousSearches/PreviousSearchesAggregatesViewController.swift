@@ -27,6 +27,12 @@ final class PreviousSearchesAggregatesViewController: UIViewController {
         setupView()
     }
     
+    // MARK: - IBActions
+    
+    // Note: This is just here to use the "Exit" functionality in the Storyboard
+    
+    @IBAction func unwindMyself(sender: UIStoryboardSegue) { }
+    
     // MARK: - Private methods
     
     private func setupView() {

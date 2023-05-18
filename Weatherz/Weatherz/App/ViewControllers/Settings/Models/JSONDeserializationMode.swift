@@ -8,14 +8,4 @@ enum DeserializationMode: Int, Codable {
 
 struct JSONDeserializationMode: Codable {
     var mode: DeserializationMode
-    
-    func toData() -> Data {
-        do {
-            let data = try JSONEncoder().encode(self)
-
-            return data
-        } catch {
-            preconditionFailure("This type should always convert to data")
-        }
-    }
 }
