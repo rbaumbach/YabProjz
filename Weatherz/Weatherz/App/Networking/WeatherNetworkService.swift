@@ -10,13 +10,13 @@ final class WeatherNetworkService: WeatherNetworkServiceProtocol {
     
     private let apiClient: APIClient
     private let deserializer: CurrentWeatherDeserializer
-    private let userDefaults: UserDefaults
+    private let userDefaults: UserDefaultsProtocol
     
     // MARK: - Init method
     
     init(apiClient: APIClient = APIClient(baseURL: Constants.WeatherStackAPI.BaseURLString),
          deserializer: CurrentWeatherDeserializer = CurrentWeatherDeserializer(),
-         userDefaults: UserDefaults = UserDefaults.standard) {
+         userDefaults: UserDefaultsProtocol = UserDefaults.standard) {
         self.apiClient = apiClient
         self.deserializer = deserializer
         self.userDefaults = userDefaults

@@ -12,8 +12,8 @@ struct Constants {
         static let StoredJSONDeserializationModeKey = "StoredJSONDeserializationModeKey"
     }
     
-    struct FileManagerFileNames {
-        static let PersistedWeatherModelsFileName = "persistedWeatherModels.json"
+    struct FileManagerFilenames {
+        static let PersistedWeatherModelsFilename = "persistedWeatherModels.json"
     }
     
     struct SystemImageName {

@@ -97,8 +97,8 @@ final class InitialViewController: UIViewController, WeatherDetailViewController
     }
     
     private func fetchPreviousSearches() -> [WeatherModel] {
-        let dataSourceFileName = Constants.FileManagerFileNames.PersistedWeatherModelsFileName
+        let dataSourceFilename = Constants.FileManagerFilenames.PersistedWeatherModelsFilename
         
-        return fileManager.readFromDocumentsDir(fileName: dataSourceFileName) ?? []
+        return fileManager.readFromDocumentsDir(filename: dataSourceFilename) ?? []
     }
 }

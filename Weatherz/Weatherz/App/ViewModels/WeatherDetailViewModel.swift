@@ -6,8 +6,6 @@ protocol WeatherDetailViewModelProtcol {
     func activate(city: String)
 }
 
-// do something nice here
-
 protocol WeatherDetailViewModelDelegate: AnyObject {
     func didUpdate(city: String, temperature: String)
     func didError(error: Error)
@@ -62,13 +60,13 @@ final class WeatherDetailViewModel: WeatherDetailViewModelProtcol {
     }
     
     private func persistWeather(weatherModel: WeatherModel) {
-        let fileName = Constants.FileManagerFileNames.PersistedWeatherModelsFileName
+        let filename = Constants.FileManagerFilenames.PersistedWeatherModelsFilename
         
-        var previousWeatherModels: [WeatherModel] = fileManager.readFromDocumentsDir(fileName: fileName) ?? []
+        var previousWeatherModels: [WeatherModel] = fileManager.readFromDocumentsDir(filename: filename) ?? []
                 
         previousWeatherModels.append(weatherModel)
                 
-        fileManager.saveToDocumentsDir(data: previousWeatherModels, fileName: fileName)
+        fileManager.saveToDocumentsDir(data: previousWeatherModels, filename: filename)
     }
     
     private func processTemperature(weatherModel: WeatherModel) -> String {
