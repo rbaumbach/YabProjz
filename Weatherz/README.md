@@ -66,9 +66,9 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [x] Test a model
   - [ ] Test a view controller
   - [ ] Test a view
-  - [ ] Test a view model
-  - [ ] Test an async method
+  - [x] Test a view model
+  - [x] Test an async method
   - [ ] Test usage of a `DispatchQueue`
   - [x] Mock out AppDelegate
-  - [1/2] Mock out a Foundation API using extensions
-  - [1/2] Mock out a Foundation API creating a wrapper
+  - [x] Mock out a Foundation API using extensions
+  - [x] Mock out a Foundation API creating a wrapper
