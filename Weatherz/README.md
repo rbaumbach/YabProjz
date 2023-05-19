@@ -64,7 +64,7 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [x] Use `sort` or `sorted`
 - [ ] Unit Testing
   - [x] Test a model
-  - [ ] Test a view controller
+  - [x] Test a view controller
   - [ ] Test a view
   - [x] Test a view model
   - [x] Test an async method

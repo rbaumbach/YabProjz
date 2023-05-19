@@ -9,7 +9,7 @@ final class PreviousWeatherDetailViewController: UIViewController {
     
     // MARK: - Public methods
     
-    var userDefaults = UserDefaults.standard
+    var userDefaults: UserDefaultsProtocol = UserDefaults.standard
     var temperatureConverter = TemperatureConverter()
     
     var weatherModel: WeatherModel!
