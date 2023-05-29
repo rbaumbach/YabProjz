@@ -43,6 +43,11 @@
 		945F2B292A17D662001A200B /* MockWeatherDetailViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B282A17D662001A200B /* MockWeatherDetailViewModelDelegate.swift */; };
 		945F2B2B2A17DBE0001A200B /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B2A2A17DBE0001A200B /* MockError.swift */; };
 		945F2B2D2A17DDD2001A200B /* PreviousWeatherDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B2C2A17DDD2001A200B /* PreviousWeatherDetailViewControllerTests.swift */; };
+		945F2B2F2A17E4B7001A200B /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B2E2A17E4B7001A200B /* APIClientTests.swift */; };
+		945F2B312A17EC77001A200B /* URLSession+Weatherz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B302A17EC77001A200B /* URLSession+Weatherz.swift */; };
+		945F2B332A17EFC7001A200B /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B322A17EFC7001A200B /* MockURLSession.swift */; };
+		945F2B352A24458E001A200B /* URLSessionDataTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B342A24458E001A200B /* URLSessionDataTaskProtocol.swift */; };
+		945F2B372A2446D1001A200B /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B362A2446D1001A200B /* MockURLSessionDataTask.swift */; };
 		94D5B91D2A08A62E004EC3CF /* PreviousSearchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D5B91C2A08A62E004EC3CF /* PreviousSearchesViewController.swift */; };
 		94D5B91F2A08A64A004EC3CF /* PreviousSearchesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D5B91E2A08A64A004EC3CF /* PreviousSearchesViewController.storyboard */; };
 		94EF60552A0BDE04007EA22F /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF60542A0BDE04007EA22F /* ViewControllerBuilder.swift */; };
@@ -100,6 +105,11 @@
 		945F2B282A17D662001A200B /* MockWeatherDetailViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWeatherDetailViewModelDelegate.swift; sourceTree = "<group>"; };
 		945F2B2A2A17DBE0001A200B /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
 		945F2B2C2A17DDD2001A200B /* PreviousWeatherDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousWeatherDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		945F2B2E2A17E4B7001A200B /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		945F2B302A17EC77001A200B /* URLSession+Weatherz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Weatherz.swift"; sourceTree = "<group>"; };
+		945F2B322A17EFC7001A200B /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		945F2B342A24458E001A200B /* URLSessionDataTaskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskProtocol.swift; sourceTree = "<group>"; };
+		945F2B362A2446D1001A200B /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		94D5B91C2A08A62E004EC3CF /* PreviousSearchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousSearchesViewController.swift; sourceTree = "<group>"; };
 		94D5B91E2A08A64A004EC3CF /* PreviousSearchesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreviousSearchesViewController.storyboard; sourceTree = "<group>"; };
 		94EF60542A0BDE04007EA22F /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
@@ -198,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				94168E882A0BC72A008823AC /* FileManager+Weatherz.swift */,
+				945F2B302A17EC77001A200B /* URLSession+Weatherz.swift */,
+				945F2B342A24458E001A200B /* URLSessionDataTaskProtocol.swift */,
 				94130C4F2A11D0D9001DFDED /* UserDefaults+Weatherz.swift */,
 			);
 			path = Extensions;
@@ -277,11 +289,13 @@
 			isa = PBXGroup;
 			children = (
 				945F2B1E2A17CB27001A200B /* MockDispatchQueueWrapper.swift */,
-				945F2B222A17CC2E001A200B /* MockFileManager.swift */,
-				945F2B202A17CBBD001A200B /* MockUserDefaults.swift */,
-				945F2B242A17CF82001A200B /* MockWeatherNetworkService.swift */,
-				945F2B282A17D662001A200B /* MockWeatherDetailViewModelDelegate.swift */,
 				945F2B2A2A17DBE0001A200B /* MockError.swift */,
+				945F2B222A17CC2E001A200B /* MockFileManager.swift */,
+				945F2B322A17EFC7001A200B /* MockURLSession.swift */,
+				945F2B362A2446D1001A200B /* MockURLSessionDataTask.swift */,
+				945F2B202A17CBBD001A200B /* MockUserDefaults.swift */,
+				945F2B282A17D662001A200B /* MockWeatherDetailViewModelDelegate.swift */,
+				945F2B242A17CF82001A200B /* MockWeatherNetworkService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -332,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				945F2B1D2A17CB10001A200B /* Mocks */,
+				945F2B2E2A17E4B7001A200B /* APIClientTests.swift */,
 				945F2B2C2A17DDD2001A200B /* PreviousWeatherDetailViewControllerTests.swift */,
 				945F2B262A17D2AA001A200B /* WeatherDetailViewModelTests.swift */,
 				94F13DB82A034A3600686652 /* WeatherModelTests.swift */,
@@ -447,6 +462,7 @@
 			files = (
 				945F2B192A16DA2E001A200B /* AppMessage.swift in Sources */,
 				94F13DA62A034A3500686652 /* InitialViewController.swift in Sources */,
+				945F2B312A17EC77001A200B /* URLSession+Weatherz.swift in Sources */,
 				94168E892A0BC72A008823AC /* FileManager+Weatherz.swift in Sources */,
 				94168E8B2A0BDC5E008823AC /* PreviousWeatherDetailViewController.swift in Sources */,
 				94D5B91D2A08A62E004EC3CF /* PreviousSearchesViewController.swift in Sources */,
@@ -458,6 +474,7 @@
 				94551CAF2A041A8B004F18A6 /* WeatherDetailViewController.swift in Sources */,
 				945F2B1C2A16DEEF001A200B /* DispatchQueueWrapper.swift in Sources */,
 				9447A1822A042C9D005E9EA0 /* WeatherNetworkService.swift in Sources */,
+				945F2B352A24458E001A200B /* URLSessionDataTaskProtocol.swift in Sources */,
 				94130C4E2A0EADFC001DFDED /* WeatherDetailViewModel.swift in Sources */,
 				94F13DA42A034A3500686652 /* SceneDelegate.swift in Sources */,
 				94168E862A0B1BE6008823AC /* DataSeeder.swift in Sources */,
@@ -483,10 +500,13 @@
 				94F13DB92A034A3600686652 /* WeatherModelTests.swift in Sources */,
 				945F2B232A17CC2E001A200B /* MockFileManager.swift in Sources */,
 				945F2B272A17D2AA001A200B /* WeatherDetailViewModelTests.swift in Sources */,
+				945F2B332A17EFC7001A200B /* MockURLSession.swift in Sources */,
+				945F2B2F2A17E4B7001A200B /* APIClientTests.swift in Sources */,
 				945F2B292A17D662001A200B /* MockWeatherDetailViewModelDelegate.swift in Sources */,
 				945F2B252A17CF82001A200B /* MockWeatherNetworkService.swift in Sources */,
 				945F2B1F2A17CB27001A200B /* MockDispatchQueueWrapper.swift in Sources */,
 				945F2B2D2A17DDD2001A200B /* PreviousWeatherDetailViewControllerTests.swift in Sources */,
+				945F2B372A2446D1001A200B /* MockURLSessionDataTask.swift in Sources */,
 				945F2B2B2A17DBE0001A200B /* MockError.swift in Sources */,
 				945F2B212A17CBBD001A200B /* MockUserDefaults.swift in Sources */,
 			);

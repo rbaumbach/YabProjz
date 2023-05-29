@@ -9,10 +9,23 @@ enum APIClientError: Error {
 }
 
 final class APIClient {
+    // MARK: - Private properties
+    
+    private let urlSession: URLSessionProtocol
+    private let dispatchQueueWrapper: DispatchQueueWrapperProtocol
+    
+    // MARK: - Readonly properties
+    
     let baseURL: String
     
-    init(baseURL: String) {
+    // MARK: - Init methods
+    
+    init(baseURL: String,
+         urlSession: URLSessionProtocol = URLSession.shared,
+         dispatchQueueWrapper: DispatchQueueWrapperProtocol = DispatchQueueWrapper()) {
         self.baseURL = baseURL
+        self.urlSession = urlSession
+        self.dispatchQueueWrapper = dispatchQueueWrapper
     }
     
     // TODO: Share dataTask logic between both request methods
@@ -26,11 +39,15 @@ final class APIClient {
                                              headers: headers,
                                              parameters: parameters)
         
-        let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+        let dataTask = urlSession.dataTask(with: urlRequest) { [weak self] data, response, error in
+            guard let self = self else { return }
+
             guard error == nil else {
                 let result: Result<[String : Any], Error> = Result.failure(APIClientError.requestError)
-                
-                completionHandler(result)
+                                
+                self.dispatchQueueWrapper.mainAsync {
+                    completionHandler(result)
+                }
                 
                 return
             }
@@ -38,7 +55,9 @@ final class APIClient {
             guard let response = (response as? HTTPURLResponse) else {
                 let result: Result<[String : Any], Error> = Result.failure(APIClientError.malformedResponseError)
                 
-                completionHandler(result)
+                self.dispatchQueueWrapper.mainAsync {
+                    completionHandler(result)
+                }
                 
                 return
             }
@@ -46,7 +65,9 @@ final class APIClient {
             guard (200...299).contains(response.statusCode) else {
                 let result: Result<[String : Any], Error> = Result.failure(APIClientError.invalidStatusCodeError)
                 
-                completionHandler(result)
+                self.dispatchQueueWrapper.mainAsync {
+                    completionHandler(result)
+                }
                 
                 return
             }
@@ -54,7 +75,9 @@ final class APIClient {
             guard let data = data else {
                 let result: Result<[String : Any], Error> = Result.failure(APIClientError.dataError)
                 
-                completionHandler(result)
+                self.dispatchQueueWrapper.mainAsync {
+                    completionHandler(result)
+                }
                 
                 return
             }
@@ -62,14 +85,16 @@ final class APIClient {
             guard let dictResponse = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
                 let result: Result<[String : Any], Error> = Result.failure(APIClientError.responseJSONError)
                 
-                completionHandler(result)
+                self.dispatchQueueWrapper.mainAsync {
+                    completionHandler(result)
+                }
                 
                 return
             }
                         
             let result: Result<[String : Any], Error> = Result.success(dictResponse)
             
-            DispatchQueue.main.async {
+            self.dispatchQueueWrapper.mainAsync {
                 completionHandler(result)
             }
         }
@@ -80,19 +105,25 @@ final class APIClient {
     func requestAndDeserialize<T: Codable>(endpoint: String,
                                            parameters: [String: String],
                                            completionHandler: @escaping (Result<T, Error>) -> Void) {
-        requestData(endpoint: endpoint, parameters: parameters) { data, error in
+        requestData(endpoint: endpoint, parameters: parameters) { [weak self] data, error in
+            guard let self = self else { return }
+            
             if let error = error {
                 let result: Result<T, Error> = Result.failure(error)
-                
-                completionHandler(result)
+                                
+                self.dispatchQueueWrapper.mainAsync {
+                    completionHandler(result)
+                }
                 
                 return
             }
             
             guard let data = data else {
                 let result: Result<T, Error> = Result.failure(APIClientError.dataError)
-                
-                completionHandler(result)
+ 
+                self.dispatchQueueWrapper.mainAsync {
+                    completionHandler(result)
+                }
                 
                 return
             }
@@ -100,13 +131,17 @@ final class APIClient {
             do {
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
                 
-                let success: Result<T, Error> = Result.success(decodedData)
+                let result: Result<T, Error> = Result.success(decodedData)
 
-                completionHandler(success)
+                self.dispatchQueueWrapper.mainAsync {
+                    completionHandler(result)
+                }
             } catch {
-                let failure: Result<T, Error> = Result.failure(error)
+                let result: Result<T, Error> = Result.failure(error)
                 
-                completionHandler(failure)
+                self.dispatchQueueWrapper.mainAsync {
+                    completionHandler(result)
+                }
             }
         }
     }
@@ -157,7 +192,7 @@ final class APIClient {
                                              endpoint: endpoint,
                                              headers: nil,
                                              parameters: parameters)
-        let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+        let dataTask: URLSessionDataTaskProtocol = urlSession.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {
                 completionHandler(nil, APIClientError.requestError)
                 
@@ -181,7 +216,7 @@ final class APIClient {
                 
                 return
             }
-                        
+            
             DispatchQueue.main.async {
                 completionHandler(data, nil)
             }
