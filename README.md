@@ -4,10 +4,10 @@ This repo serves as a location for my projects that I've completed for previous 
 
 ## Projects
 
-### AsyncImageLoader
+### [AsyncImageLoader](https://github.com/rbaumbach/YabProjz/tree/maestro/AsyncImageLoader)
 
-### Cuadrado
+### [Cuadrado](https://github.com/rbaumbach/YabProjz/tree/maestro/Cuadrado)
 
-### Weatherz
+### [Weatherz](https://github.com/rbaumbach/YabProjz/tree/maestro/Weatherz)
 
 This project serves as a practice project with various "controls," patterns and iOS usage.
