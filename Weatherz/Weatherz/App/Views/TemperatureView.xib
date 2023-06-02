@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TemperatureView" customModule="Weatherz" customModuleProvider="target">
+            <connections>
+                <outlet property="cityLabel" destination="zea-hL-WER" id="cqn-8c-8kT"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="4GO-It-Vvk"/>
+                <outlet property="degreesLabel" destination="R8f-x8-EyA" id="GBc-Xo-VdQ"/>
+                <outlet property="weatherLabel" destination="yK8-MA-Kgy" id="fHD-Aq-thY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="contentView">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="372"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zea-hL-WER" userLabel="cityLabel">
+                    <rect key="frame" x="171" y="15" width="28" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK8-MA-Kgy" userLabel="weatherLabel">
+                    <rect key="frame" x="129.66666666666666" y="61" width="111" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8f-x8-EyA" userLabel="degreesLabel">
+                    <rect key="frame" x="176.66666666666666" y="107" width="17" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="R8f-x8-EyA" firstAttribute="top" secondItem="yK8-MA-Kgy" secondAttribute="bottom" constant="25" id="3lE-j1-VpZ"/>
+                <constraint firstItem="zea-hL-WER" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="DH6-5a-MZb"/>
+                <constraint firstItem="yK8-MA-Kgy" firstAttribute="top" secondItem="zea-hL-WER" secondAttribute="bottom" constant="25" id="Kcd-M6-bjB"/>
+                <constraint firstItem="zea-hL-WER" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="OpP-Xm-O8R"/>
+                <constraint firstItem="R8f-x8-EyA" firstAttribute="centerX" secondItem="yK8-MA-Kgy" secondAttribute="centerX" id="goy-hU-qeZ"/>
+                <constraint firstItem="yK8-MA-Kgy" firstAttribute="centerX" secondItem="zea-hL-WER" secondAttribute="centerX" id="qxq-88-UUW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-53" y="-223"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

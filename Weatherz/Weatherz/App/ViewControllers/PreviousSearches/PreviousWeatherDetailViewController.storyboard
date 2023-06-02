@@ -16,53 +16,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSZ-hZ-oKz" userLabel="cityLabel">
-                                <rect key="frame" x="182.66666666666666" y="74" width="28" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rw-d3-khZ" userLabel="weatherLabel">
-                                <rect key="frame" x="141" y="120" width="111" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGy-pw-xoV" userLabel="degreesLabel">
-                                <rect key="frame" x="188" y="166" width="17" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2S-SJ-fz9" userLabel="timestampLabel">
                                 <rect key="frame" x="154" y="797" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6X3-4a-6dc" userLabel="temperatureView" customClass="TemperatureView" customModule="Weatherz" customModuleProvider="target">
+                                <rect key="frame" x="16" y="59" width="361" height="367"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pG3-3u-bne"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XSZ-hZ-oKz" firstAttribute="centerX" secondItem="pG3-3u-bne" secondAttribute="centerX" id="GdI-PY-07n"/>
-                            <constraint firstItem="zGy-pw-xoV" firstAttribute="top" secondItem="9Rw-d3-khZ" secondAttribute="bottom" constant="25" id="L7v-hd-mLP"/>
-                            <constraint firstItem="9Rw-d3-khZ" firstAttribute="top" secondItem="XSZ-hZ-oKz" secondAttribute="bottom" constant="25" id="W95-U8-lzS"/>
-                            <constraint firstItem="XSZ-hZ-oKz" firstAttribute="top" secondItem="pG3-3u-bne" secondAttribute="top" constant="15" id="WNp-mj-LVB"/>
+                            <constraint firstItem="pG3-3u-bne" firstAttribute="trailing" secondItem="6X3-4a-6dc" secondAttribute="trailing" constant="16" id="S7x-HI-TRp"/>
                             <constraint firstItem="pG3-3u-bne" firstAttribute="bottom" secondItem="V2S-SJ-fz9" secondAttribute="bottom" id="ZaK-Xf-Q6W"/>
-                            <constraint firstItem="zGy-pw-xoV" firstAttribute="centerX" secondItem="9Rw-d3-khZ" secondAttribute="centerX" id="dS1-of-hWf"/>
-                            <constraint firstItem="9Rw-d3-khZ" firstAttribute="centerX" secondItem="XSZ-hZ-oKz" secondAttribute="centerX" id="zOz-Tv-Lwy"/>
+                            <constraint firstAttribute="centerY" secondItem="6X3-4a-6dc" secondAttribute="bottom" id="ki8-di-Lxh"/>
+                            <constraint firstItem="6X3-4a-6dc" firstAttribute="leading" secondItem="pG3-3u-bne" secondAttribute="leading" constant="16" id="u9j-w1-vrN"/>
+                            <constraint firstItem="6X3-4a-6dc" firstAttribute="top" secondItem="pG3-3u-bne" secondAttribute="top" id="xpL-mT-yor"/>
                             <constraint firstItem="V2S-SJ-fz9" firstAttribute="centerX" secondItem="pG3-3u-bne" secondAttribute="centerX" id="zjX-5c-aQe"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cityLabel" destination="XSZ-hZ-oKz" id="plJ-iF-Lwn"/>
-                        <outlet property="degreesLabel" destination="zGy-pw-xoV" id="ceU-eS-3Fr"/>
-                        <outlet property="timestampLabel" destination="V2S-SJ-fz9" id="s5d-OJ-o8T"/>
+                        <outlet property="temperatureView" destination="6X3-4a-6dc" id="6gv-iT-ZRM"/>
+                        <outlet property="timestampLabel" destination="V2S-SJ-fz9" id="IM1-X6-COd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izt-Gm-tLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91" y="-54"/>
+            <point key="canvasLocation" x="-92.36641221374046" y="-54.225352112676056"/>
         </scene>
     </scenes>
     <resources>

@@ -7,9 +7,7 @@ protocol WeatherDetailViewControllerDelegate: AnyObject {
 final class WeatherDetailViewController: UIViewController, WeatherDetailViewModelDelegate {
     // MARK: - IBOutlets
     
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var weatherLabel: UILabel!
-    @IBOutlet weak var degreesLabel: UILabel!
+    @IBOutlet weak var temperatureView: TemperatureView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
@@ -38,6 +36,8 @@ final class WeatherDetailViewController: UIViewController, WeatherDetailViewMode
         weatherDetailViewModel.activate(city: cityToWeatherCheck)
     }
     
+    // MARK: - <WeatherDetailViewModel>
+    
     func didUpdate(city: String, temperature: String) {
         updateView(city: city,
                    temperature: temperature)
@@ -57,12 +57,12 @@ final class WeatherDetailViewController: UIViewController, WeatherDetailViewMode
     
     private func updateView(city: String,
                             temperature: String) {
-        cityLabel.text = city
-        degreesLabel.text = temperature
+        temperatureView.cityLabel.text = city
+        temperatureView.degreesLabel.text = temperature
         
-        cityLabel.isHidden = false
-        weatherLabel.isHidden = false
-        degreesLabel.isHidden = false
+        temperatureView.cityLabel.isHidden = false
+        temperatureView.weatherLabel.isHidden = false
+        temperatureView.degreesLabel.isHidden = false
         
         activityIndicatorView.stopAnimating()
     }
@@ -71,9 +71,9 @@ final class WeatherDetailViewController: UIViewController, WeatherDetailViewMode
         errorLabel.text = error.localizedDescription
         errorLabel.isHidden = false
         
-        cityLabel.isHidden = true
-        weatherLabel.isHidden = true
-        degreesLabel.isHidden = true
+        temperatureView.cityLabel.isHidden = true
+        temperatureView.weatherLabel.isHidden = true
+        temperatureView.degreesLabel.isHidden = true
         
         activityIndicatorView.stopAnimating()
     }

@@ -1,10 +1,12 @@
 import UIKit
 
 final class PreviousWeatherDetailViewController: UIViewController {
+    
+    // TODO: Use the temperature view here too
+    
     // MARK: - IBOutlets
     
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var degreesLabel: UILabel!
+    @IBOutlet weak var temperatureView: TemperatureView!
     @IBOutlet weak var timestampLabel: UILabel!
     
     // MARK: - Public methods
@@ -25,14 +27,18 @@ final class PreviousWeatherDetailViewController: UIViewController {
     // MARK: - Private methods
     
     private func setup() {
-        cityLabel.text = weatherModel.city
+        temperatureView.cityLabel.isHidden = false
+        temperatureView.weatherLabel.isHidden = false
+        temperatureView.degreesLabel.isHidden = false
+        
+        temperatureView.cityLabel.text = weatherModel.city
         
         if userDefaults.bool(forKey: Constants.UserDefaultKeys.ShouldShowWeatherInCelsiusKey) {
-            degreesLabel.text = String(weatherModel.temperature)
+            temperatureView.degreesLabel.text = String(weatherModel.temperature)
         } else {
             let tempInFahrenheit = temperatureConverter.convertCelsiusToFahrenheit(temperature: weatherModel.temperature)
             
-            degreesLabel.text = String(tempInFahrenheit)
+            temperatureView.degreesLabel.text = String(tempInFahrenheit)
         }
                 
         timestampLabel.text = String(weatherModel.timestamp.description)
