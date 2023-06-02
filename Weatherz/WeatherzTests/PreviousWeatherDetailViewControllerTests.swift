@@ -33,18 +33,18 @@ final class PreviousWeatherDetailViewControllerTests: XCTestCase {
         
         _ = subject.view
         
-        XCTAssertEqual(subject.cityLabel.text, "New York")
+        XCTAssertEqual(subject.temperatureView.cityLabel.text, "New York")
         
-        XCTAssertEqual(subject.degreesLabel.text, "33.0")
+        XCTAssertEqual(subject.temperatureView.degreesLabel.text, "33.0")
         XCTAssertEqual(subject.timestampLabel.text, date.description)
     }
     
     func testViewLoadsInFahrenheit() {
         _ = subject.view
         
-        XCTAssertEqual(subject.cityLabel.text, "New York")
+        XCTAssertEqual(subject.temperatureView.cityLabel.text, "New York")
         
-        XCTAssertEqual(subject.degreesLabel.text, "91.4")
+        XCTAssertEqual(subject.temperatureView.degreesLabel.text, "91.4")
         XCTAssertEqual(subject.timestampLabel.text, date.description)
     }
 }

@@ -36,7 +36,7 @@ I would like to mention that the purpose of this project is to remind myself of 
 - [x] Create generic function
 - [x] Use `NotificationCenter`
 - [x] Use a random number generator
-- [ ] Create a custom `UIView`
+- [x] Create a custom `UIView`
 - [x] API
   - [x] Use `URLSession`
   - [x] Create response models
@@ -62,10 +62,10 @@ I would like to mention that the purpose of this project is to remind myself of 
   - [x] Use `filter`
   - [x] Use `compactMap`
   - [x] Use `sort` or `sorted`
-- [ ] Unit Testing
+- [x] Unit Testing
   - [x] Test a model
   - [x] Test a view controller
-  - [ ] Test a view
+  - [x] Test a view
   - [x] Test a view model
   - [x] Test an async method
   - [x] Test usage of a `DispatchQueue`

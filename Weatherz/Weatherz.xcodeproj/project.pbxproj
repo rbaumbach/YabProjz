@@ -50,6 +50,7 @@
 		945F2B372A2446D1001A200B /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B362A2446D1001A200B /* MockURLSessionDataTask.swift */; };
 		945F2B3A2A245388001A200B /* TemperatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945F2B392A245388001A200B /* TemperatureView.xib */; };
 		945F2B3C2A24545B001A200B /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B3B2A24545B001A200B /* TemperatureView.swift */; };
+		945F2B3E2A2A7AFB001A200B /* TemperatureViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F2B3D2A2A7AFB001A200B /* TemperatureViewTests.swift */; };
 		94D5B91D2A08A62E004EC3CF /* PreviousSearchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D5B91C2A08A62E004EC3CF /* PreviousSearchesViewController.swift */; };
 		94D5B91F2A08A64A004EC3CF /* PreviousSearchesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D5B91E2A08A64A004EC3CF /* PreviousSearchesViewController.storyboard */; };
 		94EF60552A0BDE04007EA22F /* ViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF60542A0BDE04007EA22F /* ViewControllerBuilder.swift */; };
@@ -114,6 +115,7 @@
 		945F2B362A2446D1001A200B /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		945F2B392A245388001A200B /* TemperatureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemperatureView.xib; sourceTree = "<group>"; };
 		945F2B3B2A24545B001A200B /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
+		945F2B3D2A2A7AFB001A200B /* TemperatureViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewTests.swift; sourceTree = "<group>"; };
 		94D5B91C2A08A62E004EC3CF /* PreviousSearchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousSearchesViewController.swift; sourceTree = "<group>"; };
 		94D5B91E2A08A64A004EC3CF /* PreviousSearchesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreviousSearchesViewController.storyboard; sourceTree = "<group>"; };
 		94EF60542A0BDE04007EA22F /* ViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBuilder.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				945F2B1D2A17CB10001A200B /* Mocks */,
 				945F2B2E2A17E4B7001A200B /* APIClientTests.swift */,
 				945F2B2C2A17DDD2001A200B /* PreviousWeatherDetailViewControllerTests.swift */,
+				945F2B3D2A2A7AFB001A200B /* TemperatureViewTests.swift */,
 				945F2B262A17D2AA001A200B /* WeatherDetailViewModelTests.swift */,
 				94F13DB82A034A3600686652 /* WeatherModelTests.swift */,
 			);
@@ -513,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945F2B3E2A2A7AFB001A200B /* TemperatureViewTests.swift in Sources */,
 				94F13DB92A034A3600686652 /* WeatherModelTests.swift in Sources */,
 				945F2B232A17CC2E001A200B /* MockFileManager.swift in Sources */,
 				945F2B272A17D2AA001A200B /* WeatherDetailViewModelTests.swift in Sources */,
