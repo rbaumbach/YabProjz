@@ -8,6 +8,8 @@ This repo serves as a location for my projects that I've completed for previous 
 
 ### [Cuadrado](https://github.com/rbaumbach/YabProjz/tree/maestro/Cuadrado)
 
+### [Hyperloop - TBD
+
 ### [Weatherz](https://github.com/rbaumbach/YabProjz/tree/maestro/Weatherz)
 
 This project serves as a practice project with various "controls," patterns and iOS usage.

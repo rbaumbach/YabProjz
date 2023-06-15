@@ -50,10 +50,8 @@ Carthage
 
 # Fastlane
 
-fastlane/report.xml
-fastlane/.env*private*
-fastlane/test-output/
-fastlane/test_output/
-fastlane/README.md
-Snapshots/*.html
-Snapshots/en-US
+Hyperloop/fastlane/report.xml
+Hyperloop/fastlane/.env*private*
+Hyperloop/fastlane/test-output/
+Hyperloop/fastlane/test_output/
+Hyperloop/fastlane/README.md
