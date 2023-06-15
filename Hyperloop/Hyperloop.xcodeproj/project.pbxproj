@@ -126,7 +126,6 @@
 				6FFF5F6F0EDDB1966C55B5E1 /* Pods-Specs.debug.xcconfig */,
 				3E2B58B231A7AEE94C922284 /* Pods-Specs.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,6 +141,7 @@
 				94D6D2262A3BB4BC00D52CDB /* Frameworks */,
 				94D6D2272A3BB4BC00D52CDB /* Resources */,
 				E73634E72FBC6CEF55F68FAF /* [CP] Embed Pods Frameworks */,
+				946271A92A3BC06E00D63536 /* SwiftLint Run Script */,
 			);
 			buildRules = (
 			);
@@ -269,6 +269,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Specs/Pods-Specs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		946271A92A3BC06E00D63536 /* SwiftLint Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		B44B62E6C61D621260664312 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

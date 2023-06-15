@@ -1,0 +1,21 @@
+disabled_rules:
+  - force_cast
+  - force_try
+  - trailing_whitespace
+
+line_length: 150
+
+cyclomatic_complexity: 12
+
+identifier_name:
+  excluded:
+    - id
+  max_length:
+    warning: 50
+    error: 70
+  min_length:
+    error: 1
+
+excluded:
+  - Pods
+  - Specs
