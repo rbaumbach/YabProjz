@@ -8,7 +8,7 @@ This repo serves as a location for my projects that I've completed for previous 
 
 ### [Cuadrado](https://github.com/rbaumbach/YabProjz/tree/maestro/Cuadrado)
 
-### [Hyperloop - TBD
+### [Hyperloop](https://github.com/rbaumbach/YabProjz/tree/maestro/Hyperloop)
 
 ### [Weatherz](https://github.com/rbaumbach/YabProjz/tree/maestro/Weatherz)
 
