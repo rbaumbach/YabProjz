@@ -2,13 +2,21 @@ import Quick
 import Nimble
 @testable import Hyperloop
 
-class ViewControllerSpec: QuickSpec {
+struct ViewControllerBuilder {
+    func build<T: UIViewController>(name: String) -> T {
+        let storyboard = UIStoryboard(name: name, bundle: nil)
+        
+        return storyboard.instantiateInitialViewController()!
+    }
+}
+
+class MainViewControllerSpec: QuickSpec {
     override class func spec() {
-        describe("ViewController") {
-            var subject: ViewController!
+        describe("MainViewController") {
+            var subject: MainViewController!
             
             beforeEach {
-                subject = ViewController()
+                subject = ViewControllerBuilder().build(name: "MainViewController")
                 
                 _ = subject.view
             }

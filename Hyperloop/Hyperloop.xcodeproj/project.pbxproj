@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		14FFDA3A786AAC14C31D7C15 /* Pods_Hyperloop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D092E9D229E29CD8CB6FBFE0 /* Pods_Hyperloop.framework */; };
 		4006A2C9DD62864C23D03AF1 /* Pods_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97D643B6D132450B5B6AC64 /* Pods_Specs.framework */; };
+		946271AD2A3FC7A300D63536 /* ConstantSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946271AC2A3FC7A300D63536 /* ConstantSpec.swift */; };
+		946271AF2A3FC7E200D63536 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946271AE2A3FC7E200D63536 /* Constants.swift */; };
+		946271B42A3FCB4F00D63536 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946271B32A3FCB4F00D63536 /* APIClient.swift */; };
+		946271B72A3FCB7B00D63536 /* DispatchQueueWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946271B62A3FCB7B00D63536 /* DispatchQueueWrapper.swift */; };
+		946271BA2A3FCBE100D63536 /* URLSession+Hyperloop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946271B92A3FCBE100D63536 /* URLSession+Hyperloop.swift */; };
+		946271BC2A3FCC0500D63536 /* URLSessionDataTask+Hyperloop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946271BB2A3FCC0500D63536 /* URLSessionDataTask+Hyperloop.swift */; };
+		946271C42A40118800D63536 /* ImageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946271C32A40118800D63536 /* ImageNetworkService.swift */; };
+		946271C62A40AD3200D63536 /* SampleImgurJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946271C52A40AD3200D63536 /* SampleImgurJSON.swift */; };
+		946271C82A40B0D700D63536 /* ImgurResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946271C72A40B0D700D63536 /* ImgurResponse.swift */; };
 		94D6D22D2A3BB4BC00D52CDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6D22C2A3BB4BC00D52CDB /* AppDelegate.swift */; };
 		94D6D22F2A3BB4BC00D52CDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6D22E2A3BB4BC00D52CDB /* SceneDelegate.swift */; };
 		94D6D2312A3BB4BC00D52CDB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6D2302A3BB4BC00D52CDB /* MainViewController.swift */; };
@@ -31,6 +40,15 @@
 /* Begin PBXFileReference section */
 		3E2B58B231A7AEE94C922284 /* Pods-Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.release.xcconfig"; path = "Target Support Files/Pods-Specs/Pods-Specs.release.xcconfig"; sourceTree = "<group>"; };
 		6FFF5F6F0EDDB1966C55B5E1 /* Pods-Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.debug.xcconfig"; path = "Target Support Files/Pods-Specs/Pods-Specs.debug.xcconfig"; sourceTree = "<group>"; };
+		946271AC2A3FC7A300D63536 /* ConstantSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantSpec.swift; sourceTree = "<group>"; };
+		946271AE2A3FC7E200D63536 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		946271B32A3FCB4F00D63536 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		946271B62A3FCB7B00D63536 /* DispatchQueueWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueWrapper.swift; sourceTree = "<group>"; };
+		946271B92A3FCBE100D63536 /* URLSession+Hyperloop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Hyperloop.swift"; sourceTree = "<group>"; };
+		946271BB2A3FCC0500D63536 /* URLSessionDataTask+Hyperloop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionDataTask+Hyperloop.swift"; sourceTree = "<group>"; };
+		946271C32A40118800D63536 /* ImageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkService.swift; sourceTree = "<group>"; };
+		946271C52A40AD3200D63536 /* SampleImgurJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleImgurJSON.swift; sourceTree = "<group>"; };
+		946271C72A40B0D700D63536 /* ImgurResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurResponse.swift; sourceTree = "<group>"; };
 		94D6D2292A3BB4BC00D52CDB /* Hyperloop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyperloop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D6D22C2A3BB4BC00D52CDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94D6D22E2A3BB4BC00D52CDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +94,102 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		946271AA2A3FC78D00D63536 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				946271AE2A3FC7E200D63536 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		946271AB2A3FC79500D63536 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				946271AC2A3FC7A300D63536 /* ConstantSpec.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		946271B22A3FCB3800D63536 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				946271B32A3FCB4F00D63536 /* APIClient.swift */,
+				946271B52A3FCB6A00D63536 /* Extensions */,
+				946271C22A40117400D63536 /* Services */,
+				946271B82A3FCBD100D63536 /* Wrappers */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		946271B52A3FCB6A00D63536 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				946271B92A3FCBE100D63536 /* URLSession+Hyperloop.swift */,
+				946271BB2A3FCC0500D63536 /* URLSessionDataTask+Hyperloop.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		946271B82A3FCBD100D63536 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				946271B62A3FCB7B00D63536 /* DispatchQueueWrapper.swift */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
+		946271BD2A400E7700D63536 /* App Launch */ = {
+			isa = PBXGroup;
+			children = (
+				94D6D22C2A3BB4BC00D52CDB /* AppDelegate.swift */,
+				94D6D22E2A3BB4BC00D52CDB /* SceneDelegate.swift */,
+			);
+			path = "App Launch";
+			sourceTree = "<group>";
+		};
+		946271BE2A400E8700D63536 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				94D6D2352A3BB4BE00D52CDB /* Assets.xcassets */,
+				94D6D2372A3BB4BE00D52CDB /* LaunchScreen.storyboard */,
+				946271C52A40AD3200D63536 /* SampleImgurJSON.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		946271BF2A400E9300D63536 /* AppCode */ = {
+			isa = PBXGroup;
+			children = (
+				94D6D2322A3BB4BC00D52CDB /* MainViewController.storyboard */,
+				94D6D2302A3BB4BC00D52CDB /* MainViewController.swift */,
+			);
+			path = AppCode;
+			sourceTree = "<group>";
+		};
+		946271C02A400E9D00D63536 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94D6D23A2A3BB4BE00D52CDB /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		946271C12A40115B00D63536 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				946271C72A40B0D700D63536 /* ImgurResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		946271C22A40117400D63536 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				946271C32A40118800D63536 /* ImageNetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		94D6D2202A3BB4BC00D52CDB = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +213,13 @@
 		94D6D22B2A3BB4BC00D52CDB /* Hyperloop */ = {
 			isa = PBXGroup;
 			children = (
-				94D6D22C2A3BB4BC00D52CDB /* AppDelegate.swift */,
-				94D6D22E2A3BB4BC00D52CDB /* SceneDelegate.swift */,
-				94D6D2302A3BB4BC00D52CDB /* MainViewController.swift */,
-				94D6D2322A3BB4BC00D52CDB /* MainViewController.storyboard */,
-				94D6D2352A3BB4BE00D52CDB /* Assets.xcassets */,
-				94D6D2372A3BB4BE00D52CDB /* LaunchScreen.storyboard */,
-				94D6D23A2A3BB4BE00D52CDB /* Info.plist */,
+				946271BD2A400E7700D63536 /* App Launch */,
+				946271BF2A400E9300D63536 /* AppCode */,
+				946271AA2A3FC78D00D63536 /* Constants */,
+				946271C12A40115B00D63536 /* Models */,
+				946271B22A3FCB3800D63536 /* Networking */,
+				946271BE2A400E8700D63536 /* Resources */,
+				946271C02A400E9D00D63536 /* Supporting Files */,
 			);
 			path = Hyperloop;
 			sourceTree = "<group>";
@@ -113,6 +227,7 @@
 		94D6D2452A3BB7C600D52CDB /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				946271AB2A3FC79500D63536 /* Constants */,
 				94D6D2462A3BB7C600D52CDB /* Specs.swift */,
 			);
 			path = Specs;
@@ -338,6 +453,14 @@
 				94D6D2312A3BB4BC00D52CDB /* MainViewController.swift in Sources */,
 				94D6D22D2A3BB4BC00D52CDB /* AppDelegate.swift in Sources */,
 				94D6D22F2A3BB4BC00D52CDB /* SceneDelegate.swift in Sources */,
+				946271C82A40B0D700D63536 /* ImgurResponse.swift in Sources */,
+				946271C62A40AD3200D63536 /* SampleImgurJSON.swift in Sources */,
+				946271B72A3FCB7B00D63536 /* DispatchQueueWrapper.swift in Sources */,
+				946271B42A3FCB4F00D63536 /* APIClient.swift in Sources */,
+				946271AF2A3FC7E200D63536 /* Constants.swift in Sources */,
+				946271C42A40118800D63536 /* ImageNetworkService.swift in Sources */,
+				946271BC2A3FCC0500D63536 /* URLSessionDataTask+Hyperloop.swift in Sources */,
+				946271BA2A3FCBE100D63536 /* URLSession+Hyperloop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946271AD2A3FC7A300D63536 /* ConstantSpec.swift in Sources */,
 				94D6D2472A3BB7C600D52CDB /* Specs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,7 +627,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Hyperloop/Info.plist;
+				INFOPLIST_FILE = "Hyperloop/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;
@@ -537,7 +661,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Hyperloop/Info.plist;
+				INFOPLIST_FILE = "Hyperloop/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;

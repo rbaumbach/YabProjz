@@ -28,6 +28,6 @@ The breakdown of the iterative [vertically sliced](https://www.agilerant.info/ve
 
 The stories will be implemented using [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) and test will be able to be run via the command line.
 
-As described, the development of the app will be scoped to 4 hours.  This means that potentially more stories will be created that will not be completed before the time limit. Basic user facing features will be prioritized to allow for potential releasing after each code update.
+As described, the development of the app will be scoped to approximately 4 hours.  This means that potentially more stories will be created that will not be completed before the time limit. Basic user facing features will be prioritized to allow for potential releasing after each code update.
 
-Note: Due to time constraints, while the app will take advantage of constraints to lay out the views, it will be developed with the iPhone 14 in mind.
+Note: Due to time constraints, while the app will take advantage of constraints to lay out the views, it will be developed with the iPhone 14 in mind.  I will also use `UIKit`, as it is my preferred API to build interfaces quickly.
