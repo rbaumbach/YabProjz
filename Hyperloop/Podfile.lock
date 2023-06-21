@@ -1,30 +1,38 @@
 PODS:
+  - Capsule (1.0.0)
   - Nimble (12.0.1)
   - Quick (7.0.2)
   - SDWebImage (5.16.0):
     - SDWebImage/Core (= 5.16.0)
   - SDWebImage/Core (5.16.0)
   - SwiftLint (0.50.3)
+  - Utensils (0.1.0):
+    - Capsule (~> 1.0.0)
 
 DEPENDENCIES:
   - Nimble (= 12.0.1)
   - Quick (= 7.0.2)
   - SDWebImage (= 5.16.0)
   - SwiftLint (= 0.50.3)
+  - Utensils (= 0.1.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Capsule
     - Nimble
     - Quick
     - SDWebImage
     - SwiftLint
+    - Utensils
 
 SPEC CHECKSUMS:
+  Capsule: 93dbe35215ad527c43742ee980f1cf50d73fd971
   Nimble: b279b3ca9e094508778aab5c76417be158d3ad04
   Quick: efab97aca76d60be86c15daa533b2cdfbe1a74d3
   SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  Utensils: 396c2dcd98d162455843fbf05bbec855cd9a3425
 
-PODFILE CHECKSUM: 25ad3347474f7a44eaa9cec1e653b937f50cb62f
+PODFILE CHECKSUM: c510f66810ed4fce07b3b3f3127f580fae56db1a
 
 COCOAPODS: 1.12.1

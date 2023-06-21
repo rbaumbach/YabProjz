@@ -30,6 +30,7 @@
 		94D6D2362A3BB4BE00D52CDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94D6D2352A3BB4BE00D52CDB /* Assets.xcassets */; };
 		94D6D2392A3BB4BE00D52CDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D6D2372A3BB4BE00D52CDB /* LaunchScreen.storyboard */; };
 		94D6D2472A3BB7C600D52CDB /* Specs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D6D2462A3BB7C600D52CDB /* Specs.swift */; };
+		94F1275A2A432503001D8836 /* String+Hyperloop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F127592A432503001D8836 /* String+Hyperloop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		94D6D23A2A3BB4BE00D52CDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94D6D2442A3BB7C600D52CDB /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D6D2462A3BB7C600D52CDB /* Specs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specs.swift; sourceTree = "<group>"; };
+		94F127592A432503001D8836 /* String+Hyperloop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hyperloop.swift"; sourceTree = "<group>"; };
 		D092E9D229E29CD8CB6FBFE0 /* Pods_Hyperloop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4482444BCA876C5DC8D4BC9 /* Pods-Hyperloop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloop.release.xcconfig"; path = "Target Support Files/Pods-Hyperloop/Pods-Hyperloop.release.xcconfig"; sourceTree = "<group>"; };
 		D97D643B6D132450B5B6AC64 /* Pods_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,11 +246,12 @@
 			children = (
 				946271BD2A400E7700D63536 /* App Launch */,
 				946271AA2A3FC78D00D63536 /* Constants */,
+				94F127572A4324EA001D8836 /* Extensions */,
 				946271C12A40115B00D63536 /* Models */,
 				946271B22A3FCB3800D63536 /* Networking */,
-				94B44B742A430FAC0060C8AE /* Utils */,
 				946271BE2A400E8700D63536 /* Resources */,
 				946271C02A400E9D00D63536 /* Supporting Files */,
+				94B44B742A430FAC0060C8AE /* Utils */,
 				946271BF2A400E9300D63536 /* View Controllers */,
 				946271C92A4271E800D63536 /* Views */,
 			);
@@ -262,6 +265,14 @@
 				94D6D2462A3BB7C600D52CDB /* Specs.swift */,
 			);
 			path = Specs;
+			sourceTree = "<group>";
+		};
+		94F127572A4324EA001D8836 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				94F127592A432503001D8836 /* String+Hyperloop.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AACAD8E8A5AE36F47F88789E /* Pods */ = {
@@ -485,6 +496,7 @@
 			files = (
 				94D6D2312A3BB4BC00D52CDB /* MainViewController.swift in Sources */,
 				94D6D22D2A3BB4BC00D52CDB /* AppDelegate.swift in Sources */,
+				94F1275A2A432503001D8836 /* String+Hyperloop.swift in Sources */,
 				94D6D22F2A3BB4BC00D52CDB /* SceneDelegate.swift in Sources */,
 				946271C82A40B0D700D63536 /* ImgurResponse.swift in Sources */,
 				946271C62A40AD3200D63536 /* SampleImgurJSON.swift in Sources */,

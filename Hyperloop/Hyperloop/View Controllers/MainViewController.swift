@@ -1,15 +1,21 @@
 import UIKit
 import SDWebImage
+import Utensils
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DetailViewControllerDelegate {
+class MainViewController: UIViewController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, DetailViewControllerDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Views
+    
+    var searchController: UISearchController!
     
     // MARK: - Public properties
     
     var imageNetworkService: ImageNetworkServiceProtocol = ImageNetworkService()
     var viewControllerBuilder: ViewControllerBuilderProtocol = ViewControllerBuilder()
+    var debouncer: DebouncerProtocol = Debouncer()
     
     var dataSource: [ImgurImage] = []
     
@@ -19,6 +25,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
 
         setup()
+    }
+    
+    // MARK: - <UISearchResultsUpdating>
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard var searchText = searchController.searchBar.text else { return }
+        
+        debouncer.mainDebounce(seconds: 0.3) {
+            if searchText == String.empty {
+                searchText = Constants.App.defaultSearchTerm
+            }
+            
+            self.fetchImages(searchTerm: searchText)
+        }
     }
     
     // MARK: - <UITableViewDataSource>
@@ -74,9 +94,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Private methods
     
     private func setup() {
+        setupSearchController()
         setupTableView()
+        fetchImages(searchTerm: Constants.App.defaultSearchTerm)
+    }
+    
+    private func setupSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
         
-        fetchImages()
+        searchController.searchResultsUpdater = self
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = Constants.App.defaultSearchTerm
+        navigationItem.searchController = searchController
     }
     
     private func setupTableView() {
@@ -85,13 +114,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.register(nib, forCellReuseIdentifier: ImgurImageTableViewCell.identifier)
     }
     
-    private func fetchImages() {
-        imageNetworkService.getImages(searchTerm: "Chihuahua") { [weak self] result in
+    private func fetchImages(searchTerm: String) {
+        imageNetworkService.getImages(searchTerm: searchTerm) { [weak self] result in
             guard let self = self else { return }
-                        
+            
             switch result {
             case .success(let imgurImages):
-                self.dataSource = Array(imgurImages[0..<10])
+                self.dataSource = imgurImages
             case .failure(let error):
                 print(error)
             }

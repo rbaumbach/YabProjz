@@ -20,7 +20,7 @@ Story-1
 
 ## Comments
 
-1. Since no close button was given, a close button of `50.0` x `5.0` pts. was given using the system close button icon.
+1. Since no close button was given, a close button of `50.0` x `50.0` pts. was given using the system close button icon.
 2. The image is displayed in the full screen view using "Aspect Fit."
 
 ### Status
