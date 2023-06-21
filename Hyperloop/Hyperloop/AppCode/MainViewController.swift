@@ -1,6 +1,6 @@
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -28,13 +28,23 @@ class MainViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = dataSource[indexPath.row].url?.absoluteString
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ImgurImageTableViewCell.identifier,
+                                                 for: indexPath) as! ImgurImageTableViewCell
+        
+        let imgurImage = dataSource[indexPath.row]
+        
+        cell.imgurImageView.image = UIImage(systemName: "trash")
+        cell.descriptionLabel.text = imgurImage.description ?? "N/A"
         
         return cell
+    }
+    
+    // MARK: - <UITableViewDelegate>
+    
+    func tableView(_ tableView: UITableView, heightForRowAt: IndexPath) -> CGFloat {
+        return 132.0
     }
     
     // MARK: - Private methods
@@ -46,16 +56,17 @@ class MainViewController: UIViewController, UITableViewDataSource {
     }
     
     private func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let nib = UINib(nibName: ImgurImageTableViewCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: ImgurImageTableViewCell.identifier)
     }
     
     private func fetchImages() {
         imageNetworkService.getImages(searchTerm: "Chihuahua") { [weak self] result in
             guard let self = self else { return }
-            
+                        
             switch result {
             case .success(let imgurImages):
-                self.dataSource = imgurImages
+                self.dataSource = Array(imgurImages[0..<5])
             case .failure(let error):
                 print(error)
             }

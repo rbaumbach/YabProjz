@@ -19,4 +19,8 @@ As a user, when I launch the app, I'm able to see 10 Chihuahua images in a list 
 
 ## Comments
 
-TBD
+1. Since the "gallery" api is given for this exercise, I will make the assumption that I will take all the images from each gallery returned from the API and "flatten" them out into a single datasource that will be displayed to the user.
+
+Ex: [Gallery.images] (array of arrays) -> [Image]
+
+2. The height of each `UITableView` row was set to a static `132.0 pt.` since the requirements didn't state one. This is 3x the size of the normal `44.0 pt.` height.
