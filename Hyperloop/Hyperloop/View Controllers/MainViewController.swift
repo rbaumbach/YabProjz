@@ -1,7 +1,7 @@
 import UIKit
 import SDWebImage
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DetailViewControllerDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -9,6 +9,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Public properties
     
     var imageNetworkService: ImageNetworkServiceProtocol = ImageNetworkService()
+    var viewControllerBuilder: ViewControllerBuilderProtocol = ViewControllerBuilder()
     
     var dataSource: [ImgurImage] = []
     
@@ -17,7 +18,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupView()
+        setup()
     }
     
     // MARK: - <UITableViewDataSource>
@@ -37,7 +38,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let imgurImage = dataSource[indexPath.row]
         
         cell.imgurImageView.sd_setImage(with: imgurImage.url,
-                                        placeholderImage: UIImage(systemName: "trash"))
+                                        placeholderImage: UIImage(systemName: "photo"))
         
         cell.descriptionLabel.text = imgurImage.description ?? "N/A"
         
@@ -51,12 +52,26 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Present detailed view
+        let detailViewController: DetailViewController = viewControllerBuilder.build(name: "DetailViewController")
+        detailViewController.delegate = self
+        
+        let cell = tableView.cellForRow(at: indexPath) as! ImgurImageTableViewCell
+        let image = cell.imgurImageView.image
+        
+        detailViewController.image = image
+        
+        present(detailViewController, animated: true)
+    }
+    
+    // MARK: - <DetailViewControllerDelegate>
+    
+    func didClose() {
+        dismiss(animated: true)
     }
     
     // MARK: - Private methods
     
-    private func setupView() {
+    private func setup() {
         setupTableView()
         
         fetchImages()
@@ -64,6 +79,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     private func setupTableView() {
         let nib = UINib(nibName: ImgurImageTableViewCell.identifier, bundle: nil)
+        
         tableView.register(nib, forCellReuseIdentifier: ImgurImageTableViewCell.identifier)
     }
     
