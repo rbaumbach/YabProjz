@@ -21,4 +21,8 @@ Story-1
 
 ## Comments
 
-TBD
+N/A
+
+### Status
+
+Completed

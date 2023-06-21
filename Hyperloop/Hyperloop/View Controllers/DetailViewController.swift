@@ -4,7 +4,7 @@ protocol DetailViewControllerDelegate: AnyObject {
     func didClose()
 }
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var detailImageVIew: UIImageView!
@@ -22,6 +22,12 @@ final class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+    }
+    
+    // MARK: - <UIScrollViewDelegate>
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return detailImageVIew
     }
     
     // MARK: - IBActions

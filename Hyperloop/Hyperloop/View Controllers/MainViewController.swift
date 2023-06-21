@@ -118,7 +118,9 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
     }
     
     private func fetchImages(searchTerm: String) {
-        imageNetworkService.getImages(searchTerm: searchTerm) { [weak self] result in
+        imageNetworkService.getImages(searchTerm: searchTerm,
+                                      sortType: .time,
+                                      page: 1) { [weak self] result in
             guard let self = self else { return }
             
             switch result {

@@ -1,4 +1,4 @@
-# 3. Detailed image view
+# 4. Detailed image view
 
 ## Description
 
