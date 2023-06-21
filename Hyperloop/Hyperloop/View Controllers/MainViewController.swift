@@ -42,6 +42,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.descriptionLabel.text = imgurImage.description ?? "N/A"
         
+        cell.selectionStyle = .none
+        
         return cell
     }
     
