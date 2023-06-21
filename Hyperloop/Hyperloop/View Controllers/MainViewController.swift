@@ -6,6 +6,7 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
     // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     // MARK: - Views
     
@@ -25,6 +26,8 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
         super.viewDidLoad()
 
         setup()
+        
+        title = Constants.App.mainTitle
     }
     
     // MARK: - <UISearchResultsUpdating>
@@ -32,7 +35,7 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
     func updateSearchResults(for searchController: UISearchController) {
         guard var searchText = searchController.searchBar.text else { return }
         
-        debouncer.mainDebounce(seconds: 0.3) {
+        debouncer.mainDebounce(seconds: Constants.App.defaultDebouncerTime) {
             if searchText == String.empty {
                 searchText = Constants.App.defaultSearchTerm
             }
@@ -58,9 +61,9 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
         let imgurImage = dataSource[indexPath.row]
         
         cell.imgurImageView.sd_setImage(with: imgurImage.url,
-                                        placeholderImage: UIImage(systemName: "photo"))
+                                        placeholderImage: UIImage(systemName: Constants.App.imagePlaceholderName))
         
-        cell.descriptionLabel.text = imgurImage.description ?? "N/A"
+        cell.descriptionLabel.text = imgurImage.description ?? Constants.App.defaultImgurImageDescription
         
         cell.selectionStyle = .none
         
@@ -70,7 +73,7 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
     // MARK: - <UITableViewDelegate>
     
     func tableView(_ tableView: UITableView, heightForRowAt: IndexPath) -> CGFloat {
-        return 132.0
+        return Constants.App.mainTableViewCellHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -120,12 +123,38 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
             
             switch result {
             case .success(let imgurImages):
-                self.dataSource = imgurImages
+                defer {
+                    self.dataSource = imgurImages
+                    self.tableView.reloadData()
+                }
+                
+                guard imgurImages.count != 0 else {
+                    self.showError(text: "Unable to find images for: \(searchTerm)")
+                    
+                    return
+                }
+                
+                self.hideError()
             case .failure(let error):
-                print(error)
+                defer {
+                    self.dataSource = []
+                    self.tableView.reloadData()
+                }
+                
+                self.showError(text: "Error: \(error)")
             }
-            
-            self.tableView.reloadData()
         }
+    }
+
+    private func showError(text: String) {
+        errorLabel.text = text
+        errorLabel.isHidden = false
+        tableView.isHidden = true
+    }
+    
+    private func hideError() {
+        errorLabel.isHidden = true
+        
+        tableView.isHidden = false
     }
 }

@@ -16,6 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6P-NN-WoA" userLabel="errorLabel">
+                                <rect key="frame" x="20" y="416" width="353" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mo2-CG-FNE" userLabel="tableView">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -29,13 +35,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mo2-CG-FNE" secondAttribute="bottom" id="4aD-vt-qrp"/>
+                            <constraint firstItem="y6P-NN-WoA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CaE-S2-yaW"/>
                             <constraint firstItem="mo2-CG-FNE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LBQ-MI-BIr"/>
                             <constraint firstItem="mo2-CG-FNE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MV0-jV-T54"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y6P-NN-WoA" secondAttribute="trailing" constant="20" id="Y9v-j9-9lT"/>
+                            <constraint firstItem="y6P-NN-WoA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="frZ-Zc-X0s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mo2-CG-FNE" secondAttribute="trailing" id="lFP-89-2RC"/>
+                            <constraint firstItem="y6P-NN-WoA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tqe-5b-aXt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5AV-F4-x38"/>
                     <connections>
+                        <outlet property="errorLabel" destination="y6P-NN-WoA" id="pDi-mG-OXW"/>
                         <outlet property="tableView" destination="mo2-CG-FNE" id="Gj3-hQ-aGo"/>
                     </connections>
                 </viewController>

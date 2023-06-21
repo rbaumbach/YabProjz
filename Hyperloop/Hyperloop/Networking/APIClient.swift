@@ -118,7 +118,7 @@ final class APIClient: APIClientProtocol {
                                              endpoint: endpoint,
                                              headers: headers,
                                              parameters: parameters)
-        print(urlRequest)
+//        print(urlRequest)
         
         let dataTask: URLSessionDataTaskProtocol = urlSession.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {
