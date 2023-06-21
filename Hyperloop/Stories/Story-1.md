@@ -24,3 +24,9 @@ As a user, when I launch the app, I'm able to see 10 Chihuahua images in a list 
 Ex: [Gallery.images] (array of arrays) -> [Image]
 
 2. The height of each `UITableView` row was set to a static `132.0 pt.` since the requirements didn't state one. This is 3x the size of the normal `44.0 pt.` height.
+
+3. Descriptions returned from the Imgur API for images can be nil. I put "N/A" for the description those items.  In a future ticket I will update this to the name of the search term that was used.
+
+### Status
+
+Completed
