@@ -1,4 +1,5 @@
 import UIKit
+import SDWebImage
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: - IBOutlets
@@ -35,7 +36,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let imgurImage = dataSource[indexPath.row]
         
-        cell.imgurImageView.image = UIImage(systemName: "trash")
+        cell.imgurImageView.sd_setImage(with: imgurImage.url,
+                                        placeholderImage: UIImage(systemName: "trash"))
+        
         cell.descriptionLabel.text = imgurImage.description ?? "N/A"
         
         return cell
@@ -45,6 +48,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, heightForRowAt: IndexPath) -> CGFloat {
         return 132.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: Present detailed view
     }
     
     // MARK: - Private methods
@@ -66,7 +73,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         
             switch result {
             case .success(let imgurImages):
-                self.dataSource = Array(imgurImages[0..<5])
+                self.dataSource = Array(imgurImages[0..<10])
             case .failure(let error):
                 print(error)
             }
