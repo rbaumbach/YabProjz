@@ -22,7 +22,8 @@ Story-2
 
 ## Comments
 
-TBD
+1. `ImageNetworkService` method to fetch images has been deprecated to use full Imgur endpoint that accepts sort and paging.
 
 ### Status
 
+Incomplete
