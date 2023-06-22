@@ -64,7 +64,7 @@
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="zoq-gD-knO" id="vAb-3Y-4Bj"/>
-                        <outlet property="detailImageVIew" destination="W0k-jB-dZr" id="78z-fK-bhg"/>
+                        <outlet property="detailImageView" destination="W0k-jB-dZr" id="BEP-G3-9pt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

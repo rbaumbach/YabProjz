@@ -7,7 +7,7 @@ protocol DetailViewControllerDelegate: AnyObject {
 final class DetailViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - IBOutlets
     
-    @IBOutlet weak var detailImageVIew: UIImageView!
+    @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var closeButton: UIButton!
     
     // MARK: - Public properties
@@ -27,7 +27,7 @@ final class DetailViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - <UIScrollViewDelegate>
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return detailImageVIew
+        return detailImageView
     }
     
     // MARK: - IBActions
@@ -39,6 +39,6 @@ final class DetailViewController: UIViewController, UIScrollViewDelegate {
     // MARK: - Private methods
     
     func setup() {
-        detailImageVIew.image = image
+        detailImageView.image = image
     }
 }

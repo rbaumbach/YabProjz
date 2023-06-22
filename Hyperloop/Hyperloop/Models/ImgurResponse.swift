@@ -1,5 +1,5 @@
 import Foundation
 
-struct ImgurResponse: Codable {
+struct ImgurResponse: Codable, Equatable {
     let data: [ImgurItem]
 }

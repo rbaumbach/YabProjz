@@ -1,6 +1,6 @@
 import Foundation
 
-struct ImgurImage: Codable {
+struct ImgurImage: Codable, Equatable {
     // MARK: - Readonly properties
     
     let id: String
