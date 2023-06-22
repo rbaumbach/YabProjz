@@ -64,7 +64,7 @@ final class ImageNetworkService: ImageNetworkServiceProtocol {
     
     private func endpoint(sortType: ImgurImageSortType,
                           page: Int) -> String {
-        return "/3/gallery/search/\(sortType.rawValue)/page\(page)/"
+        return "/3/gallery/search/\(sortType.rawValue)/page/\(page)/"
     }
     
     private func parameters(searchTerm: String) -> [String: String] {

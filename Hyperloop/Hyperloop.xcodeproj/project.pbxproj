@@ -44,6 +44,8 @@
 		94F127762A44ABD3001D8836 /* FakeImageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F127752A44ABD3001D8836 /* FakeImageNetworkService.swift */; };
 		94F127782A44ABDD001D8836 /* FakeViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F127772A44ABDD001D8836 /* FakeViewControllerBuilder.swift */; };
 		94F1277C2A44B26C001D8836 /* FakeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1277B2A44B26C001D8836 /* FakeError.swift */; };
+		94F1277F2A44B4F7001D8836 /* ImageNetworkServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1277E2A44B4F7001D8836 /* ImageNetworkServiceSpec.swift */; };
+		94F127812A44B942001D8836 /* FakeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F127802A44B942001D8836 /* FakeAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		94F127752A44ABD3001D8836 /* FakeImageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeImageNetworkService.swift; sourceTree = "<group>"; };
 		94F127772A44ABDD001D8836 /* FakeViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewControllerBuilder.swift; sourceTree = "<group>"; };
 		94F1277B2A44B26C001D8836 /* FakeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeError.swift; sourceTree = "<group>"; };
+		94F1277E2A44B4F7001D8836 /* ImageNetworkServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkServiceSpec.swift; sourceTree = "<group>"; };
+		94F127802A44B942001D8836 /* FakeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAPIClient.swift; sourceTree = "<group>"; };
 		D092E9D229E29CD8CB6FBFE0 /* Pods_Hyperloop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4482444BCA876C5DC8D4BC9 /* Pods-Hyperloop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloop.release.xcconfig"; path = "Target Support Files/Pods-Hyperloop/Pods-Hyperloop.release.xcconfig"; sourceTree = "<group>"; };
 		D97D643B6D132450B5B6AC64 /* Pods_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +298,7 @@
 				94F1275C2A43921E001D8836 /* Extensions */,
 				94F127742A44ABC2001D8836 /* Fakes */,
 				94F1275F2A439299001D8836 /* Models */,
+				94F1277D2A44B4EB001D8836 /* Networking */,
 				94F1275B2A43920C001D8836 /* View Controllers */,
 				94F1276E2A43983D001D8836 /* Views */,
 			);
@@ -347,11 +352,20 @@
 		94F127742A44ABC2001D8836 /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
+				94F127802A44B942001D8836 /* FakeAPIClient.swift */,
 				94F1277B2A44B26C001D8836 /* FakeError.swift */,
 				94F127752A44ABD3001D8836 /* FakeImageNetworkService.swift */,
 				94F127772A44ABDD001D8836 /* FakeViewControllerBuilder.swift */,
 			);
 			path = Fakes;
+			sourceTree = "<group>";
+		};
+		94F1277D2A44B4EB001D8836 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				94F1277E2A44B4F7001D8836 /* ImageNetworkServiceSpec.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		AACAD8E8A5AE36F47F88789E /* Pods */ = {
@@ -600,11 +614,13 @@
 			files = (
 				94F1276D2A4396CD001D8836 /* ImgurImageSpec.swift in Sources */,
 				94F127672A439346001D8836 /* ImgurMediaTypeSpec.swift in Sources */,
+				94F127812A44B942001D8836 /* FakeAPIClient.swift in Sources */,
 				94F1275E2A43922D001D8836 /* String+HyperloopSpec.swift in Sources */,
 				94F127732A43F5D5001D8836 /* DetailViewControllerSpec.swift in Sources */,
 				94F127702A43984D001D8836 /* ImgurImageTableViewCellSpec.swift in Sources */,
 				94F127762A44ABD3001D8836 /* FakeImageNetworkService.swift in Sources */,
 				946271AD2A3FC7A300D63536 /* ConstantSpec.swift in Sources */,
+				94F1277F2A44B4F7001D8836 /* ImageNetworkServiceSpec.swift in Sources */,
 				94F127692A439400001D8836 /* ImgurResponseSpec.swift in Sources */,
 				94F127782A44ABDD001D8836 /* FakeViewControllerBuilder.swift in Sources */,
 				94F1276B2A439624001D8836 /* ImgurItemSpec.swift in Sources */,

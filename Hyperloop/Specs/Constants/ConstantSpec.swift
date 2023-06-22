@@ -8,7 +8,7 @@ class ConstantsSpec: QuickSpec {
             describe("Imgur") {
                 it("has appropriate content") {
                     expect(Constants.Imgur.ClientIDKey).to(equal("Authorization"))
-//                    expect(Constants.Imgur.ClientIDValue).to(equal("Client-ID "))
+                    expect(Constants.Imgur.ClientIDValue).to(equal("Client-ID <Enter your ClientID here>"))
                     expect(Constants.Imgur.BaseURL).to(equal("https://api.imgur.com"))
                 }
             }
