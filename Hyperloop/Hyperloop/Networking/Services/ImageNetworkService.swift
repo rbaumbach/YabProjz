@@ -45,7 +45,7 @@ final class ImageNetworkService: ImageNetworkServiceProtocol {
                    sortType: ImgurImageSortType,
                    page: Int,
                    completionHandler: @escaping (Result<[ImgurImage], Error>) -> Void) {
-        let endpoint = endpointV2(sortType: sortType,
+        let endpoint = endpoint(sortType: sortType,
                                   page: page)
                 
         apiClient.requestAndDeserialize(endpoint: endpoint,
@@ -62,8 +62,8 @@ final class ImageNetworkService: ImageNetworkServiceProtocol {
         return "/3/gallery/search/"
     }
     
-    private func endpointV2(sortType: ImgurImageSortType,
-                            page: Int) -> String {
+    private func endpoint(sortType: ImgurImageSortType,
+                          page: Int) -> String {
         return "/3/gallery/search/\(sortType.rawValue)/page\(page)/"
     }
     

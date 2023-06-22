@@ -19,7 +19,7 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
     var debouncer: DebouncerProtocol = Debouncer()
     
     var dataSource: [ImgurImage] = []
-    
+        
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
@@ -35,7 +35,9 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
     func updateSearchResults(for searchController: UISearchController) {
         guard var searchText = searchController.searchBar.text else { return }
         
-        debouncer.mainDebounce(seconds: Constants.App.defaultDebouncerTime) {
+        debouncer.mainDebounce(seconds: Constants.App.defaultDebouncerTime) { [weak self] in
+            guard let self = self else { return }
+            
             if searchText == String.empty {
                 searchText = Constants.App.defaultSearchTerm
             }
@@ -117,10 +119,11 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
         tableView.register(nib, forCellReuseIdentifier: ImgurImageTableViewCell.identifier)
     }
     
-    private func fetchImages(searchTerm: String) {
+    private func fetchImages(searchTerm: String,
+                             page: Int = 1) {
         imageNetworkService.getImages(searchTerm: searchTerm,
                                       sortType: .time,
-                                      page: 1) { [weak self] result in
+                                      page: page) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
