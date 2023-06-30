@@ -2,7 +2,7 @@
 
 This is a simple exercise of displaying quotes from a [Quotes API](https://zenquotes.io) in a `UITableView` with dynamic `UITableViewCell` text sizing.
 
-(Image to be displayed here)
+![Challenge Image](quotes.png)
 
 ## Challenge Introduction
 
@@ -13,13 +13,15 @@ I was given 25 minutes[^1] to build an iOS app from scratch using any resource n
 
 The completed code can be found in the [OnTheFly](OnTheFly/) directory of this repo.
 
-## Challege Thoughts
+## Challege Thought Process
 
 TBD
 
-## Challenge Discussion
+## Challenge Execution
 
 I was able to complete everything except the dynamic text within the time limit.  I was currently in the process of remembering the technique for basic dymamic `UITableViewCell.textLabel?.text` when I ran out of time.
+
+When I was instructed to stop for questions, I commented that normally dymamic sizing can be achieved with custom `UITableViewCell` subclasses by making sure that all the labels follow proper constraint "maths." I also communicated that I would probably look for the easiest solution by taking a look at the `UITableViewCell.textLabel?.numberOfLines` and set it to `0`.  After the challenge was over, I went and tried that approach, and it indeed made the cells self sized.
 
 ## Hindsight Execution
 
@@ -31,4 +33,4 @@ The completed code can be found in the [Hindsight](Hindsight/) directory of this
 
 TBD
 
-[^1]: The exercise itself was 30 minutes.  However, this challenge was a surprise and wasn't communicated to me and my workstation wasn't setup.  I spent about ~5 minutes getting Xcode ready for development.
+[^1]: The exercise itself was 30 minutes.  However, this challenge was a surprise and wasn't communicated to me beforehand and my workstation wasn't setup.  I spent about ~5 minutes getting Xcode ready for development.
