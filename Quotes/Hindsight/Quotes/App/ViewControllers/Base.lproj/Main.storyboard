@@ -11,11 +11,17 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Adaptive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euc-US-HTe" userLabel="errorLabel">
+                                <rect key="frame" x="20" y="428.33333333333331" width="353" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9TT-W2-J3n" userLabel="tableView">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -28,12 +34,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9TT-W2-J3n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ADn-py-WtE"/>
+                            <constraint firstItem="euc-US-HTe" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Gul-CN-bmT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9TT-W2-J3n" secondAttribute="trailing" id="JGL-uG-tYL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="euc-US-HTe" secondAttribute="trailing" constant="20" id="PnT-7O-zKq"/>
+                            <constraint firstItem="euc-US-HTe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Tbw-zG-fSd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9TT-W2-J3n" secondAttribute="bottom" id="bpS-Vw-nEx"/>
+                            <constraint firstItem="euc-US-HTe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cAQ-xv-lDn"/>
                             <constraint firstItem="9TT-W2-J3n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vyf-91-jCF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="euc-US-HTe" id="JLt-hq-hST"/>
                         <outlet property="tableView" destination="9TT-W2-J3n" id="XSC-I7-JEi"/>
                     </connections>
                 </viewController>
