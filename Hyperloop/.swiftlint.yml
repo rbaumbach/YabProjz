@@ -3,7 +3,7 @@ disabled_rules:
   - force_try
   - trailing_whitespace
 
-line_length: 150
+line_length: 200
 
 cyclomatic_complexity: 12
 

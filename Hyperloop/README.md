@@ -1,5 +1,7 @@
 # Hyperloop
 
+The original challenge text can be found [here](og.txt)
+
 ## Loading and Testing of this project
 
 * Prerequisites: [ruby](https://github.com/sstephenson/rbenv), [ruby gems](https://rubygems.org/pages/download), [bundler](http://bundler.io)
@@ -59,7 +61,7 @@ For this project it was no different.  I ended up using `SD_WebImage` due to it 
 
 ### Debouncer
 
-I knew I wanted the search bar to make "on the fly" API calls for the images based on typing rather than wait for a user to hit a "done" button.  I knew it could be expensive to make API calls after each letter, and lead to a bad experience without a debouncer.  I have an open source library of various tools called `Utensils`, so I added this dependency to get access to a debouncer.  After some quick trial and error, I settled on a debouncing time of `0.3` seconds.
+I knew I wanted the search bar to make "on the fly" API calls for the images based on typing rather than wait for a user to hit a "done" button.  I knew it could be expensive to make API calls after each letter, and would lead to a bad experience without a debouncer.  I have an open source library of various tools called `Utensils`, so I added this dependency to get access to a debouncer.  After some quick trial and error, I settled on a debouncing time of `0.3` seconds.
 
 ### UI
 
@@ -92,3 +94,7 @@ Some issues that I ran into that required a significant amount of time were:
 * Brushing up on some `UIKit` controls that I haven't use in a while such as a `SearchController` and `UIScrollView`.
 
 While I sped through this exercise to get in as much as I could within the time frame, I don't think I would have done anything differently.  Now, on to searching for more Chihuahua images!
+
+## Update
+
+In a follow up conversation, I was asked to make the `DetailViewController` swipeable.  In other words, the same image will be displayed when tapped from the `MainViewController`, but swiping left will show the previous image, and swiping right will show the next image.  In an effort to distinquish between my previous work and this new requirement, I will create a new view controller that is identical to the current controllers, and then make changes so that the previous work can still be shown.  Then a new view controller will be added that gives the user a choice as to which flow to use.

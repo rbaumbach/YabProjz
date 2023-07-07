@@ -46,6 +46,12 @@
 		94F1277C2A44B26C001D8836 /* FakeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1277B2A44B26C001D8836 /* FakeError.swift */; };
 		94F1277F2A44B4F7001D8836 /* ImageNetworkServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1277E2A44B4F7001D8836 /* ImageNetworkServiceSpec.swift */; };
 		94F127812A44B942001D8836 /* FakeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F127802A44B942001D8836 /* FakeAPIClient.swift */; };
+		94F25AF22A525EA500F472B9 /* SwitcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F25AF12A525EA500F472B9 /* SwitcherViewController.swift */; };
+		94F25AF42A525ECB00F472B9 /* SwitcherViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F25AF32A525ECB00F472B9 /* SwitcherViewController.storyboard */; };
+		94F25AF62A52630700F472B9 /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F25AF52A52630700F472B9 /* PrincipalViewController.swift */; };
+		94F25AF82A52632D00F472B9 /* PrincipalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F25AF72A52632D00F472B9 /* PrincipalViewController.storyboard */; };
+		94F25AFD2A53967600F472B9 /* DetalleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F25AFC2A53967600F472B9 /* DetalleViewController.swift */; };
+		94F25AFF2A53987900F472B9 /* DetalleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F25AFE2A53987900F472B9 /* DetalleViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +107,12 @@
 		94F1277B2A44B26C001D8836 /* FakeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeError.swift; sourceTree = "<group>"; };
 		94F1277E2A44B4F7001D8836 /* ImageNetworkServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageNetworkServiceSpec.swift; sourceTree = "<group>"; };
 		94F127802A44B942001D8836 /* FakeAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAPIClient.swift; sourceTree = "<group>"; };
+		94F25AF12A525EA500F472B9 /* SwitcherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherViewController.swift; sourceTree = "<group>"; };
+		94F25AF32A525ECB00F472B9 /* SwitcherViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwitcherViewController.storyboard; sourceTree = "<group>"; };
+		94F25AF52A52630700F472B9 /* PrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
+		94F25AF72A52632D00F472B9 /* PrincipalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrincipalViewController.storyboard; sourceTree = "<group>"; };
+		94F25AFC2A53967600F472B9 /* DetalleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleViewController.swift; sourceTree = "<group>"; };
+		94F25AFE2A53987900F472B9 /* DetalleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetalleViewController.storyboard; sourceTree = "<group>"; };
 		D092E9D229E29CD8CB6FBFE0 /* Pods_Hyperloop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyperloop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4482444BCA876C5DC8D4BC9 /* Pods-Hyperloop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyperloop.release.xcconfig"; path = "Target Support Files/Pods-Hyperloop/Pods-Hyperloop.release.xcconfig"; sourceTree = "<group>"; };
 		D97D643B6D132450B5B6AC64 /* Pods_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +214,7 @@
 		946271BF2A400E9300D63536 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				94F25AFB2A53962F00F472B9 /* Update */,
 				94B44B792A4310E50060C8AE /* DetailViewController.storyboard */,
 				94B44B772A43109C0060C8AE /* DetailViewController.swift */,
 				94D6D2322A3BB4BC00D52CDB /* MainViewController.storyboard */,
@@ -221,10 +234,10 @@
 		946271C12A40115B00D63536 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				946271C72A40B0D700D63536 /* ImgurResponse.swift */,
-				94F127602A4392B1001D8836 /* ImgurItem.swift */,
 				94F127622A4392D0001D8836 /* ImgurImage.swift */,
+				94F127602A4392B1001D8836 /* ImgurItem.swift */,
 				94F127642A439318001D8836 /* ImgurMediaType.swift */,
+				946271C72A40B0D700D63536 /* ImgurResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -368,6 +381,19 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		94F25AFB2A53962F00F472B9 /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				94F25AFE2A53987900F472B9 /* DetalleViewController.storyboard */,
+				94F25AFC2A53967600F472B9 /* DetalleViewController.swift */,
+				94F25AF72A52632D00F472B9 /* PrincipalViewController.storyboard */,
+				94F25AF52A52630700F472B9 /* PrincipalViewController.swift */,
+				94F25AF32A525ECB00F472B9 /* SwitcherViewController.storyboard */,
+				94F25AF12A525EA500F472B9 /* SwitcherViewController.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
 		AACAD8E8A5AE36F47F88789E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,9 +493,12 @@
 			files = (
 				94D6D2392A3BB4BE00D52CDB /* LaunchScreen.storyboard in Resources */,
 				94D6D2362A3BB4BE00D52CDB /* Assets.xcassets in Resources */,
+				94F25AFF2A53987900F472B9 /* DetalleViewController.storyboard in Resources */,
 				94B44B7A2A4310E50060C8AE /* DetailViewController.storyboard in Resources */,
 				946271CD2A42725200D63536 /* ImgurImageTableViewCell.xib in Resources */,
+				94F25AF42A525ECB00F472B9 /* SwitcherViewController.storyboard in Resources */,
 				94D6D2342A3BB4BC00D52CDB /* MainViewController.storyboard in Resources */,
+				94F25AF82A52632D00F472B9 /* PrincipalViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +616,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F25AFD2A53967600F472B9 /* DetalleViewController.swift in Sources */,
+				94F25AF62A52630700F472B9 /* PrincipalViewController.swift in Sources */,
+				94F25AF22A525EA500F472B9 /* SwitcherViewController.swift in Sources */,
 				94D6D2312A3BB4BC00D52CDB /* MainViewController.swift in Sources */,
 				94D6D22D2A3BB4BC00D52CDB /* AppDelegate.swift in Sources */,
 				94F1275A2A432503001D8836 /* String+Hyperloop.swift in Sources */,
@@ -786,7 +818,7 @@
 				INFOPLIST_FILE = "Hyperloop/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;
+				INFOPLIST_KEY_UIMainStoryboardFile = SwitcherViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -820,7 +852,7 @@
 				INFOPLIST_FILE = "Hyperloop/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = MainViewController;
+				INFOPLIST_KEY_UIMainStoryboardFile = SwitcherViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

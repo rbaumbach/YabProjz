@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5ZZ-D5-Cbb">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detalle View Controller-->
+        <scene sceneID="WnC-xD-LVB">
+            <objects>
+                <viewController id="5ZZ-D5-Cbb" customClass="DetalleViewController" customModule="Hyperloop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Dm-86-r3n">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="CNf-U8-qHb" userLabel="scrollView">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8z-xM-Gq1" userLabel="detailImageView">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="f8z-xM-Gq1" firstAttribute="top" secondItem="fEN-a1-SI2" secondAttribute="top" id="OPe-wc-Ouc"/>
+                                    <constraint firstItem="f8z-xM-Gq1" firstAttribute="trailing" secondItem="fEN-a1-SI2" secondAttribute="trailing" constant="393" id="cnI-LN-Pod"/>
+                                    <constraint firstItem="f8z-xM-Gq1" firstAttribute="bottom" secondItem="fEN-a1-SI2" secondAttribute="bottom" constant="759" id="hhx-KJ-q3j"/>
+                                    <constraint firstItem="f8z-xM-Gq1" firstAttribute="height" secondItem="dD5-Fp-kAD" secondAttribute="height" id="smB-1k-rWV"/>
+                                    <constraint firstItem="f8z-xM-Gq1" firstAttribute="width" secondItem="dD5-Fp-kAD" secondAttribute="width" id="wh5-5x-nkS"/>
+                                    <constraint firstItem="f8z-xM-Gq1" firstAttribute="leading" secondItem="fEN-a1-SI2" secondAttribute="leading" id="ynJ-BF-qet"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="fEN-a1-SI2"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="dD5-Fp-kAD"/>
+                                <connections>
+                                    <outlet property="delegate" destination="5ZZ-D5-Cbb" id="RLE-3f-MDe"/>
+                                    <outletCollection property="gestureRecognizers" destination="hfa-4g-ghJ" appends="YES" id="SrJ-Jm-fs1"/>
+                                    <outletCollection property="gestureRecognizers" destination="oGc-TL-Ul7" appends="YES" id="OI0-h5-93o"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv5-de-ZdM" userLabel="closeButton">
+                                <rect key="frame" x="20" y="80" width="50" height="48.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="R5n-S9-VLV"/>
+                                    <constraint firstAttribute="height" constant="50" id="rB0-4d-i8k"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="x.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="didTapCloseButton:" destination="5ZZ-D5-Cbb" eventType="touchUpInside" id="NqA-zb-67Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i0u-ab-ryX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CNf-U8-qHb" firstAttribute="top" secondItem="i0u-ab-ryX" secondAttribute="top" id="Aig-q5-JUH"/>
+                            <constraint firstItem="CNf-U8-qHb" firstAttribute="leading" secondItem="i0u-ab-ryX" secondAttribute="leading" id="R2S-PP-wIA"/>
+                            <constraint firstItem="i0u-ab-ryX" firstAttribute="bottom" secondItem="CNf-U8-qHb" secondAttribute="bottom" id="edd-En-Jfu"/>
+                            <constraint firstItem="Jv5-de-ZdM" firstAttribute="top" secondItem="i0u-ab-ryX" secondAttribute="top" constant="20" id="iu9-hQ-fbk"/>
+                            <constraint firstItem="Jv5-de-ZdM" firstAttribute="leading" secondItem="i0u-ab-ryX" secondAttribute="leading" constant="20" id="uJm-R9-A2Y"/>
+                            <constraint firstItem="i0u-ab-ryX" firstAttribute="trailing" secondItem="CNf-U8-qHb" secondAttribute="trailing" id="zRg-jB-m18"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="Jv5-de-ZdM" id="Xac-fM-VKb"/>
+                        <outlet property="detailImageView" destination="f8z-xM-Gq1" id="oc0-iJ-dT0"/>
+                        <outlet property="scrollView" destination="CNf-U8-qHb" id="CYS-cL-eXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4cZ-d3-Kd9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="hfa-4g-ghJ" userLabel="leftSwipeGestureRecognizer">
+                    <connections>
+                        <action selector="didSwipeLeft:" destination="5ZZ-D5-Cbb" id="vD4-Jl-J1Z"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="oGc-TL-Ul7" userLabel="rightSwipeGestureRecognizer">
+                    <connections>
+                        <action selector="didSwipeRight:" destination="5ZZ-D5-Cbb" id="79q-1Z-kJa"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="396" y="-25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="x.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

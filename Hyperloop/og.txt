@@ -1,0 +1,49 @@
+# Mobile Coding Challenge
+
+## Goal
+
+Build an app that allows the user to search and view images
+
+## Time limit
+
+Please send submission by end of day and do not spend significantly more than 4 hours in total.
+
+## Description
+Jon is researching the perfect image for a hyperloop shuttle. He enters his keyword in a search field. The app connects to an image search API (e.g. Imgur) and displays the result associated with his research in a tasteful manner. He can then scroll over the results and click on individual images to bring them in full screen for a great viewing experience.
+
+## Instructions
+
+Treat this challenge as if you were part of the team. Feel free to ask questions if you are completely stuck or use any of your favorite resources such as 3rd party sdks/libraries, Google, Stack Overflow etc.
+Additionally, anything that makes the app fast, effortless and delightful. Imagine that you are delivering a consumer facing feature.
+
+## Additional Info
+
+### Imgur info
+
+* Client-Id: b067d5cb828ec5a
+  * Authorization Header:
+  * Authorization: Client-ID b067d5cb828ec5a
+  * https://apidocs.imgur.com/#authorization-and-oauth
+* Image Search Endpoint:
+  * GET Gallery Search
+  * https://api.imgur.com/3/gallery/search/?q=cats​ (base)
+  * https://api.imgur.com/3/gallery/search/{{sort}}/{{window}}/{{page}}?q=cats​ (with
+optional params that need to be replaced)
+* Example request
+  * `curl --location --request GET "​https://api.imgur.com/3/gallery/search/?q=cats​" --header "Authorization: Client-ID b067d5cb828ec5a"`
+
+GET Gallery Search
+
+`https://api.imgur.com/3/gallery/search/{{sort}}/{{window}}/{{page}}?q=dogs​`
+
+Search the gallery with a given query string.
+
+### Parameters
+
+Key: sort - optional, Value: time | viral | top -defaults to time
+Key: window - optional, Value: Change the date range of the request if the sort is "top", day | week | month | year | all, defaults to all
+Key: page - optional, Value: integer - the data paging number
+
+### Simple Search Query Parameters
+
+Key: "q", Value: Query string (note: if advanced search parameters are set, this query string is ignored). This parameter also supports boolean operators (AND, OR, NOT) and indices (tag: user: title: ext: subreddit: album: meme:). An example compound query would be "title: cats AND dogs ext: gif"

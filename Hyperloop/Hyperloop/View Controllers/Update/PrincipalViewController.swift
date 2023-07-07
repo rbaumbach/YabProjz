@@ -1,8 +1,7 @@
 import UIKit
-import SDWebImage
 import Utensils
 
-class MainViewController: UIViewController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, DetailViewControllerDelegate {
+final class PrincipalViewController: UIViewController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, DetalleViewControllerDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -17,7 +16,7 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
     var imageNetworkService: ImageNetworkServiceProtocol = ImageNetworkService()
     var viewControllerBuilder: ViewControllerBuilderProtocol = ViewControllerBuilder()
     var debouncer: DebouncerProtocol = Debouncer()
-    
+        
     var dataSource: [ImgurImage] = []
         
     // MARK: - View lifecycle
@@ -27,7 +26,7 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
         
         title = Constants.App.mainTitle
 
-        setup()        
+        setup()
     }
     
     // MARK: - <UISearchResultsUpdating>
@@ -79,15 +78,12 @@ class MainViewController: UIViewController, UISearchResultsUpdating, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewController: DetailViewController = viewControllerBuilder.build(name: "DetailViewController")
-        detailViewController.delegate = self
+        let detalleViewController: DetalleViewController = viewControllerBuilder.build(name: "DetalleViewController")
+        detalleViewController.delegate = self
+        detalleViewController.imgurImageIndex = indexPath.row
+        detalleViewController.imgurImages = dataSource
         
-        let cell = tableView.cellForRow(at: indexPath) as! ImgurImageTableViewCell
-        let image = cell.imgurImageView.image
-        
-        detailViewController.image = image
-        
-        present(detailViewController, animated: true)
+        present(detalleViewController, animated: true)
     }
     
     // MARK: - <DetailViewControllerDelegate>
