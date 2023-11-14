@@ -75,8 +75,6 @@ I've fully tested all the models, custom views, extensions, `ImgurNetworkService
 
 There are werid constraint errors given for the scroll view.  Not sure why, as the scroll view was very basic and configured properly.  Further investigation is needed.
 
-###
-
 ## Final thoughts
 
 I ended up spending ~5 hours of actual development time completing what I have on this project.  I was able to:
