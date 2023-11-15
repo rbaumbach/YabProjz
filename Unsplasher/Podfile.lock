@@ -1,0 +1,35 @@
+PODS:
+  - Nimble (12.0.1)
+  - Quick (7.0.2)
+  - SDWebImage (5.16.0):
+    - SDWebImage/Core (= 5.16.0)
+  - SDWebImage/Core (5.16.0)
+  - SwiftLint (0.50.3)
+  - UnsplashPhotoPicker (42.1.0)
+
+DEPENDENCIES:
+  - Nimble (= 12.0.1)
+  - Quick (= 7.0.2)
+  - SDWebImage (= 5.16.0)
+  - SwiftLint (= 0.50.3)
+  - UnsplashPhotoPicker (= 42.1.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Nimble
+    - Quick
+    - SDWebImage
+    - SwiftLint
+  https://github.com/rbaumbach/PublicCocoapodSpecs.git:
+    - UnsplashPhotoPicker
+
+SPEC CHECKSUMS:
+  Nimble: b279b3ca9e094508778aab5c76417be158d3ad04
+  Quick: efab97aca76d60be86c15daa533b2cdfbe1a74d3
+  SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
+  SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  UnsplashPhotoPicker: 042fbf5a11f0b5e43d9fb585bc492b2e9662be85
+
+PODFILE CHECKSUM: 8849b263bd9af2476ec3f1423e162bf6df0e25fb
+
+COCOAPODS: 1.12.1

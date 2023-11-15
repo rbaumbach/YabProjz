@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='TrackVia iOS Code ChallengeTests.xctest' tests='11' failures='0'>
+  <testsuite name='TrackVia_iOS_Code_ChallengeTests.ConstantsTests Constants, Unsplash, has appropriate' tests='1' failures='0'>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.ConstantsTests Constants, Unsplash, has appropriate' name='keys' time='0.005'/>
+  </testsuite>
+  <testsuite name='TrackVia_iOS_Code_ChallengeTests.DetailViewControllerSpec DetailViewController, has a' tests='1' failures='0'>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.DetailViewControllerSpec DetailViewController, has a' name='tempImage' time='0.004'/>
+  </testsuite>
+  <testsuite name='TrackVia_iOS_Code_ChallengeTests.DetailViewControllerSpec DetailViewController, when the view loads, has a' tests='2' failures='0'>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.DetailViewControllerSpec DetailViewController, when the view loads, has a' name='detailImageView' time='0.013'/>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.DetailViewControllerSpec DetailViewController, when the view loads, has a' name='closeButton' time='0.005'/>
+  </testsuite>
+  <testsuite name='TrackVia_iOS_Code_ChallengeTests.DetailViewControllerSpec DetailViewController, when the view loads, when the close button is tapped, notifies it&apos;s delegate that the view did' tests='1' failures='0'>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.DetailViewControllerSpec DetailViewController, when the view loads, when the close button is tapped, notifies it&apos;s delegate that the view did' name='close' time='0.004'/>
+  </testsuite>
+  <testsuite name='TrackVia_iOS_Code_ChallengeTests.DetailViewControllerSpec DetailViewController, when the view loads, &lt;UIScrollViewDelegate&gt;, #viewForZooming(in:), always returns the' tests='1' failures='0'>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.DetailViewControllerSpec DetailViewController, when the view loads, &lt;UIScrollViewDelegate&gt;, #viewForZooming(in:), always returns the' name='detailImageView' time='0.004'/>
+  </testsuite>
+  <testsuite name='TrackVia_iOS_Code_ChallengeTests.ViewControllerBuilderTests ViewControllerBuilder, can build a view controller from a' tests='1' failures='0'>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.ViewControllerBuilderTests ViewControllerBuilder, can build a view controller from a' name='storyboard' time='0.002'/>
+  </testsuite>
+  <testsuite name='TrackVia_iOS_Code_ChallengeTests.ViewControllerTests ViewController, has a unsplash photo picker' tests='1' failures='0'>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.ViewControllerTests ViewController, has a unsplash photo picker' name='configuration' time='0.001'/>
+  </testsuite>
+  <testsuite name='TrackVia_iOS_Code_ChallengeTests.ViewControllerTests ViewController, when the view loads, creates an unsplash photo' tests='1' failures='0'>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.ViewControllerTests ViewController, when the view loads, creates an unsplash photo' name='picker' time='0.003'/>
+  </testsuite>
+  <testsuite name='TrackVia_iOS_Code_ChallengeTests.ViewControllerTests ViewController, when the view loads, adds the unsplash photo picker view to the main' tests='1' failures='0'>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.ViewControllerTests ViewController, when the view loads, adds the unsplash photo picker view to the main' name='view' time='0.004'/>
+  </testsuite>
+  <testsuite name='TrackVia_iOS_Code_ChallengeTests.ViewControllerTests ViewController, when the view loads, sets the subject as the delegate of the unsplash photo' tests='1' failures='0'>
+    <testcase classname='TrackVia_iOS_Code_ChallengeTests.ViewControllerTests ViewController, when the view loads, sets the subject as the delegate of the unsplash photo' name='picker' time='0.003'/>
+  </testsuite>
+</testsuites>

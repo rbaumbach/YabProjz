@@ -1,0 +1,25 @@
+source 'https://github.com/rbaumbach/PublicCocoapodSpecs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, "16.0"
+use_frameworks!
+inhibit_all_warnings!
+
+def shared_pods
+  pod "UnsplashPhotoPicker", "42.1.0"
+end
+
+target "Unsplasher" do
+  shared_pods
+
+  pod "SDWebImage", "5.16.0"
+
+  pod "SwiftLint", "0.50.3"
+end
+
+target "UnsplasherTests" do
+  shared_pods
+
+  pod "Quick", "7.0.2"
+  pod "Nimble", "12.0.1"
+end
