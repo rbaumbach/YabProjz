@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "BBF6B617-0F1D-4A48-9289-DFE5E2BD5FEF",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ConflictingEvents.xcodeproj",
+      "identifier" : "949D8BE82B177340004A495C",
+      "name" : "ConflictingEvents"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ConflictingEvents.xcodeproj",
+        "identifier" : "949D8C032B177357004A495C",
+        "name" : "Specs"
+      }
+    }
+  ],
+  "version" : 1
+}

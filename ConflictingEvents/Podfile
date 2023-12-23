@@ -1,0 +1,14 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, "17.0"
+use_frameworks!
+inhibit_all_warnings!
+
+target "ConflictingEvents" do
+  pod "SwiftLint", "0.54.0"
+end
+
+target "Specs" do
+  pod "Quick", "7.3.0"
+  pod "Moocher", "0.4.0"
+end

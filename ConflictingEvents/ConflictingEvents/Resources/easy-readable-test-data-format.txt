@@ -1,0 +1,41 @@
+This file shows the mock.json as events and how they should be displayed on the app.  This was used for manual testing.
+
+7 Sections total
+21 Events total
+
+[
+	11 / 01 / 2018
+    Event(title: Bicycling with Friends, startDate: November 1, 2018 6:00 AM, endDate: November 1, 2018 9:30 AM, hasConflict: false)
+    Event(title: Yoga, startDate: November 1, 2018 6:00 PM, endDate: November 1, 2018 7:33 PM, hasConflict: false)
+    Event(title: Local Pub with Friends, startDate: November 1, 2018 7:33 PM, endDate: November 1, 2018 11:00 PM, hasConflict: false)
+
+	11 / 03 / 2018
+    *** Event(title: Football Game, startDate: November 3, 2018 6:14 PM, endDate: November 3, 2018 9:44 PM, hasConflict: true)
+    *** Event(title: Football Tailgate with John, startDate: November 3, 2018 6:14 PM, endDate: November 3, 2018 9:44 PM, hasConflict: true)
+
+	11 / 06 / 2018
+    Event(title: Volleyball With Friends, startDate: November 6, 2018 12:00 PM, endDate: November 6, 2018 1:26 PM, hasConflict: false)
+    Event(title: Boba Tea Grand Opening, startDate: November 6, 2018 1:27 PM, endDate: November 6, 2018 2:00 PM, hasConflict: false)
+    *** Event(title: Evening Cookout with Friends, startDate: November 6, 2018 5:00 PM, endDate: November 6, 2018 10:00 PM, hasConflict: true)
+    *** Event(title: SF Coffee Festival, startDate: November 6, 2018 6:00 PM, endDate: November 6, 2018 9:00 PM, hasConflict: true)
+
+ 	11 / 07 / 2018
+    Event(title: Roller Derby, startDate: November 7, 2018 12:00 PM, endDate: November 7, 2018 2:30 PM, hasConflict: false)
+    Event(title: Rock Concert, startDate: November 7, 2018 6:30 PM, endDate: November 7, 2018 11:00 PM, hasConflict: false)
+
+	11 / 08 / 2018
+    *** Event(title: Lunch with Friends, startDate: November 8, 2018 11:30 AM, endDate: November 8, 2018 12:59 PM, hasConflict: true)
+    *** Event(title: Nap Break, startDate: November 8, 2018 12:56 PM, endDate: November 8, 2018 1:30 PM, hasConflict: true)
+    Event(title: Basketball Game, startDate: November 8, 2018 7:30 PM, endDate: November 8, 2018 10:30 PM, hasConflict: false)
+
+	11 / 09 / 2018
+    Event(title: Lunch Meeting, startDate: November 9, 2018 12:30 PM, endDate: November 9, 2018 2:30 PM, hasConflict: false)
+    Event(title: Free Donuts, startDate: November 9, 2018 3:00 PM, endDate: November 9, 2018 4:00 PM, hasConflict: false)
+    *** Event(title: TV Show Marathon, startDate: November 9, 2018 4:30 PM, endDate: November 9, 2018 9:00 PM, hasConflict: true)
+    *** Event(title: Beer with Friends, startDate: November 9, 2018 8:00 PM, endDate: November 9, 2018 9:30 PM, hasConflict: true)
+
+	11 / 10 / 2018
+    *** Event(title: Birthday Party, startDate: November 10, 2018 12:30 PM, endDate: November 10, 2018 8:30 PM, hasConflict: true)
+    *** Event(title: Dentist Appointment, startDate: November 10, 2018 1:45 PM, endDate: November 10, 2018 2:30 PM, hasConflict: true)
+    *** Event(title: Evening Picnic, startDate: November 10, 2018 6:00 PM, endDate: November 10, 2018 7:00 PM, hasConflict: true)
+]
